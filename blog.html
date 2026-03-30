@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Artigos sobre energia, foco, fadiga e soluções naturais baseadas em evidências científicas.">
+<title>Blog — EnergiaVital</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <nav class="nav">
+        <a href="index.html" class="nav-brand">Energia<span>Vital</span></a>
+        <button class="nav-toggle" aria-label="Menu">☰</button>
+        <div class="nav-links">
+            <a href="index.html">Início</a>
+            <a href="blog.html">Blog</a>
+            <a href="suplementos.html">Suplementos Recomendados</a>
+            <a href="privacidade.html">Privacidade</a>
+            <a href="termos.html">Termos</a>
+            <a href="aviso-afiliados.html">Aviso de Afiliados</a>
+        </div>
+    </nav>
+    <section class="article-hero">
+        <h1>Blog — Energia, Foco e Bem-Estar</h1>
+        <p class="meta">Conteúdo baseado em evidências para ajudar você a entender e melhorar sua energia</p>
+    </section>
+    <section class="section">
+        <div class="search-box"><input type="text" id="searchInput" placeholder="🔍 Buscar artigos..."></div>
+        <div class="filters">
+            <button class="filter-btn active" data-cat="all">Todos</button>
+            <button class="filter-btn" data-cat="sono">Sono</button>
+            <button class="filter-btn" data-cat="nutricao">Nutrição</button>
+            <button class="filter-btn" data-cat="suplementos">Suplementos</button>
+            <button class="filter-btn" data-cat="bemestar">Bem-Estar</button>
+        </div>
+        <div class="cards">
+            <div class="card article-card" data-cat="sono"><span class="card-tag">Sono</span><p class="read-time">⏱ 8 min de leitura</p><h3><a href="artigo-cansaco-dormir.html">Por que você acorda cansado mesmo dormindo?</a></h3><p class="excerpt">Descubra as razões escondidas por trás de acordar exausto e o que você pode fazer a respeito.</p><a href="artigo-cansaco-dormir.html" class="btn btn-outline btn-sm">Ler Artigo →</a></div>
+            <div class="card article-card" data-cat="nutricao"><span class="card-tag">Nutrição</span><p class="read-time">⏱ 7 min de leitura</p><h3><a href="artigo-magnesio.html">Falta de magnésio: sintomas e impactos no corpo</a></h3><p class="excerpt">Saiba como o magnésio afeta mais de 300 processos no seu corpo e por que a deficiência é tão comum.</p><a href="artigo-magnesio.html" class="btn btn-outline btn-sm">Ler Artigo →</a></div>
+            <div class="card article-card" data-cat="bemestar"><span class="card-tag">Bem-Estar</span><p class="read-time">⏱ 7 min de leitura</p><h3><a href="artigo-cansaco-constante.html">Cansaço constante: o que pode estar acontecendo</a></h3><p class="excerpt">Entenda a conexão entre fadiga persistente e dificuldade cognitiva.</p><a href="artigo-cansaco-constante.html" class="btn btn-outline btn-sm">Ler Artigo →</a></div>
+            <div class="card article-card" data-cat="suplementos"><span class="card-tag">Suplementos</span><p class="read-time">⏱ 10 min de leitura</p><h3><a href="artigo-melhores-suplementos.html">Melhores suplementos para energia e foco</a></h3><p class="excerpt">Guia completo e baseado em evidências dos melhores suplementos para combater a fadiga.</p><a href="artigo-melhores-suplementos.html" class="btn btn-outline btn-sm">Ler Artigo →</a></div>
+            <div class="card article-card" data-cat="sono"><span class="card-tag">Sono</span><p class="read-time">⏱ 8 min de leitura</p><h3><a href="artigo-sono-energia.html">Como o sono influencia sua energia e concentração</a></h3><p class="excerpt">A ciência por trás de como a qualidade do sono afeta diretamente seu foco e produtividade.</p><a href="artigo-sono-energia.html" class="btn btn-outline btn-sm">Ler Artigo →</a></div>
+        </div>
+    </section>
+    
+    <footer class="footer">
+        <div class="footer-grid">
+            <div>
+                <h4>EnergiaVital</h4>
+                <p style="font-size:0.9rem;">Informações baseadas em evidências para ajudar você a recuperar sua energia e clareza mental de forma natural.</p>
+            </div>
+            <div>
+                <h4>Conteúdo</h4>
+                <a href="index.html">Início</a>
+                <a href="blog.html">Blog</a>
+                <a href="suplementos.html">Suplementos Recomendados</a>
+            </div>
+            <div>
+                <h4>Legal</h4>
+                <a href="privacidade.html">Política de Privacidade</a>
+                <a href="termos.html">Termos de Uso</a>
+                <a href="aviso-afiliados.html">Aviso de Afiliados</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 EnergiaVital. Todos os direitos reservados.</p>
+            <p class="footer-disclaimer">Este site é apenas informativo e não substitui orientação médica profissional. Sempre consulte seu médico antes de iniciar qualquer suplementação. Resultados individuais podem variar.</p>
+        </div>
+    </footer>
+<button class="back-top" aria-label="Back to top">↑</button>
+<script>
+    // Mobile nav toggle
+    document.addEventListener('DOMContentLoaded', function() {
+        const toggle = document.querySelector('.nav-toggle');
+        const links = document.querySelector('.nav-links');
+        if (toggle && links) {
+            toggle.addEventListener('click', () => links.classList.toggle('open'));
+        }
+        
+        // Back to top
+        const btn = document.querySelector('.back-top');
+        if (btn) {
+            window.addEventListener('scroll', () => {
+                btn.classList.toggle('show', window.scrollY > 400);
+            });
+            btn.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
+        }
+        
+        // FAQ accordion
+        document.querySelectorAll('.faq-q').forEach(q => {
+            q.addEventListener('click', () => {
+                const a = q.nextElementSibling;
+                a.classList.toggle('open');
+                q.querySelector('.faq-icon').textContent = a.classList.contains('open') ? '−' : '+';
+            });
+        });
+        
+        // Search filter
+        const search = document.getElementById('searchInput');
+        if (search) {
+            search.addEventListener('input', function() {
+                const val = this.value.toLowerCase();
+                document.querySelectorAll('.article-card').forEach(card => {
+                    const text = card.textContent.toLowerCase();
+                    card.style.display = text.includes(val) ? '' : 'none';
+                });
+            });
+        }
+        
+        // Category filters
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                const cat = this.dataset.cat;
+                document.querySelectorAll('.article-card').forEach(card => {
+                    if (cat === 'all' || card.dataset.cat === cat) {
+                        card.style.display = '';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    });
+    </script>
+<script src="js/main.js"></script>
+</body>
+</html>

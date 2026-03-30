@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Termos de uso do site EnergiaVital. Leia nossos termos, aviso médico e condições de uso.">
+<title>Termos de Uso — EnergiaVital</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <nav class="nav">
+        <a href="index.html" class="nav-brand">Energia<span>Vital</span></a>
+        <button class="nav-toggle" aria-label="Menu">☰</button>
+        <div class="nav-links">
+            <a href="index.html">Início</a>
+            <a href="blog.html">Blog</a>
+            <a href="suplementos.html">Suplementos Recomendados</a>
+            <a href="privacidade.html">Privacidade</a>
+            <a href="termos.html">Termos</a>
+            <a href="aviso-afiliados.html">Aviso de Afiliados</a>
+        </div>
+    </nav>
+    <div class="legal-content">
+        <h1>Termos de Uso</h1>
+        <p class="updated">Última atualização: Janeiro de 2026</p>
+
+        <h2>Aceitação dos Termos</h2>
+        <p>Ao acessar e usar o EnergiaVital, você concorda em ficar vinculado a estes Termos de Uso. Se não concorda, por favor não use este site.</p>
+
+        <h2>Aviso Médico Importante</h2>
+        <p><strong>Este site é apenas para fins informativos e educacionais.</strong> O conteúdo do EnergiaVital não pretende ser um substituto para aconselhamento médico profissional, diagnóstico ou tratamento. Sempre procure o conselho do seu médico ou outro profissional de saúde qualificado para qualquer dúvida sobre uma condição médica.</p>
+        <p>Nunca ignore aconselhamento médico profissional ou demore em procurá-lo por causa de algo que leu neste site. Se achar que pode ter uma emergência médica, ligue para seu médico ou serviços de emergência imediatamente.</p>
+        <p>As informações fornecidas neste site não foram avaliadas pela ANVISA (Agência Nacional de Vigilância Sanitária). Os produtos discutidos não se destinam a diagnosticar, tratar, curar ou prevenir qualquer doença.</p>
+
+        <h2>Uso do Site</h2>
+        <p>Você concorda em usar este site apenas para fins legais e de maneira que não infrinja os direitos de terceiros.</p>
+
+        <h2>Propriedade Intelectual</h2>
+        <p>Todo o conteúdo deste site — incluindo textos, gráficos, logos e design — é propriedade do EnergiaVital e protegido por leis de direitos autorais. Reprodução sem autorização é proibida.</p>
+
+        <h2>Links de Afiliados</h2>
+        <p>Este site contém links de afiliados. Quando você clica nesses links e faz uma compra, podemos receber uma comissão sem custo adicional para você. Para mais detalhes, consulte nosso <a href="aviso-afiliados.html">Aviso de Afiliados</a>.</p>
+
+        <h2>Limitação de Responsabilidade</h2>
+        <p>O EnergiaVital e seus autores não serão responsáveis por quaisquer danos decorrentes do uso deste site ou confiança em seu conteúdo, incluindo danos diretos, indiretos, incidentais ou consequenciais.</p>
+
+        <h2>Modificações nos Termos</h2>
+        <p>Reservamo-nos o direito de modificar estes Termos de Uso a qualquer momento. As alterações entram em vigor imediatamente após a publicação nesta página.</p>
+
+        <h2>Lei Aplicável</h2>
+        <p>Estes termos serão regidos e interpretados de acordo com as leis da República Federativa do Brasil.</p>
+
+        <h2>Contato</h2>
+        <p>Dúvidas sobre estes Termos? Contate-nos em: <strong>contato@energiavital.com.br</strong></p>
+    </div>
+    
+    <footer class="footer">
+        <div class="footer-grid">
+            <div>
+                <h4>EnergiaVital</h4>
+                <p style="font-size:0.9rem;">Informações baseadas em evidências para ajudar você a recuperar sua energia e clareza mental de forma natural.</p>
+            </div>
+            <div>
+                <h4>Conteúdo</h4>
+                <a href="index.html">Início</a>
+                <a href="blog.html">Blog</a>
+                <a href="suplementos.html">Suplementos Recomendados</a>
+            </div>
+            <div>
+                <h4>Legal</h4>
+                <a href="privacidade.html">Política de Privacidade</a>
+                <a href="termos.html">Termos de Uso</a>
+                <a href="aviso-afiliados.html">Aviso de Afiliados</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 EnergiaVital. Todos os direitos reservados.</p>
+            <p class="footer-disclaimer">Este site é apenas informativo e não substitui orientação médica profissional. Sempre consulte seu médico antes de iniciar qualquer suplementação. Resultados individuais podem variar.</p>
+        </div>
+    </footer>
+<button class="back-top" aria-label="Back to top">↑</button>
+<script>
+    // Mobile nav toggle
+    document.addEventListener('DOMContentLoaded', function() {
+        const toggle = document.querySelector('.nav-toggle');
+        const links = document.querySelector('.nav-links');
+        if (toggle && links) {
+            toggle.addEventListener('click', () => links.classList.toggle('open'));
+        }
+        
+        // Back to top
+        const btn = document.querySelector('.back-top');
+        if (btn) {
+            window.addEventListener('scroll', () => {
+                btn.classList.toggle('show', window.scrollY > 400);
+            });
+            btn.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
+        }
+        
+        // FAQ accordion
+        document.querySelectorAll('.faq-q').forEach(q => {
+            q.addEventListener('click', () => {
+                const a = q.nextElementSibling;
+                a.classList.toggle('open');
+                q.querySelector('.faq-icon').textContent = a.classList.contains('open') ? '−' : '+';
+            });
+        });
+        
+        // Search filter
+        const search = document.getElementById('searchInput');
+        if (search) {
+            search.addEventListener('input', function() {
+                const val = this.value.toLowerCase();
+                document.querySelectorAll('.article-card').forEach(card => {
+                    const text = card.textContent.toLowerCase();
+                    card.style.display = text.includes(val) ? '' : 'none';
+                });
+            });
+        }
+        
+        // Category filters
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                const cat = this.dataset.cat;
+                document.querySelectorAll('.article-card').forEach(card => {
+                    if (cat === 'all' || card.dataset.cat === cat) {
+                        card.style.display = '';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    });
+    </script>
+<script src="js/main.js"></script>
+</body>
+</html>
