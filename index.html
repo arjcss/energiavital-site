@@ -3,334 +3,619 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Descubra por que você sente cansaço constante, falta de energia e dificuldade de foco. Soluções naturais baseadas em evidências.">
-<title>EnergiaVital — Sua Energia Começa Aqui</title>
+<meta name="description" content="Produtos selecionados para energia, sono, hidratação e bem-estar. Encontre suplementos e itens práticos para melhorar sua rotina com mais disposição.">
+<title>EnergiaVital - Produtos para Energia, Sono e Bem-Estar</title>
 <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
-        --primary: #2D8A4E;
-        --secondary: #1A73E8;
+        --primary: #228B57;
+        --primary-dark: #17613D;
+        --secondary: #2463EB;
         --accent: #F59E0B;
-        --dark: #1A1A2E;
-        --light: #F8FAFC;
+        --ink: #172033;
+        --muted: #667085;
+        --soft: #F6F8F5;
+        --soft-blue: #EDF5FF;
         --white: #FFFFFF;
-        --gray: #6B7280;
-        --border: #E5E7EB;
+        --border: #E4E7EC;
+        --danger: #B42318;
+        --shadow: 0 18px 50px rgba(23, 32, 51, 0.10);
     }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; color: var(--dark); line-height: 1.7; background: var(--white); }
-    a { text-decoration: none; color: var(--secondary); transition: all 0.3s; }
-    a:hover { color: var(--primary); }
-    img { max-width: 100%; }
-    
-    /* NAV */
-    .nav { background: var(--white); border-bottom: 1px solid var(--border); padding: 1rem 2rem; position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-    .nav-brand { font-size: 1.4rem; font-weight: 800; color: var(--primary); }
-    .nav-brand span { color: var(--accent); }
-    .nav-links { display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: center; }
-    .nav-links a { color: var(--dark); font-weight: 500; font-size: 0.95rem; padding: 0.3rem 0; border-bottom: 2px solid transparent; }
-    .nav-links a:hover, .nav-links a.active { color: var(--primary); border-bottom-color: var(--primary); }
-    .nav-toggle { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; }
-    
-    /* HERO */
-    .hero { background: linear-gradient(135deg, #e8f5e9 0%, #e3f2fd 50%, #fff8e1 100%); padding: 5rem 2rem 4rem; text-align: center; }
-    .hero h1 { font-size: 2.5rem; color: var(--dark); max-width: 800px; margin: 0 auto 1rem; line-height: 1.3; }
-    .hero p { font-size: 1.2rem; color: var(--gray); max-width: 650px; margin: 0 auto 2rem; }
-    
-    /* BUTTONS */
-    .btn { display: inline-block; padding: 0.85rem 2rem; border-radius: 8px; font-weight: 700; font-size: 1rem; transition: all 0.3s; cursor: pointer; border: none; text-align: center; }
-    .btn-primary { background: var(--accent); color: var(--white); }
-    .btn-primary:hover { background: #D97706; color: var(--white); transform: translateY(-2px); box-shadow: 0 4px 15px rgba(245,158,11,0.4); }
-    .btn-green { background: var(--primary); color: var(--white); }
-    .btn-green:hover { background: #236B3E; color: var(--white); transform: translateY(-2px); }
-    .btn-outline { background: transparent; color: var(--primary); border: 2px solid var(--primary); }
-    .btn-outline:hover { background: var(--primary); color: var(--white); }
-    .btn-sm { padding: 0.6rem 1.2rem; font-size: 0.9rem; }
-    .btn-block { display: block; width: 100%; }
-    
-    /* SECTIONS */
-    .section { padding: 4rem 2rem; max-width: 1100px; margin: 0 auto; }
-    .section-alt { background: var(--light); }
-    .section-title { font-size: 2rem; text-align: center; margin-bottom: 0.5rem; color: var(--dark); }
-    .section-subtitle { text-align: center; color: var(--gray); margin-bottom: 3rem; font-size: 1.1rem; }
-    
-    /* CARDS */
-    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
-    .card { background: var(--white); border-radius: 12px; padding: 2rem; box-shadow: 0 2px 15px rgba(0,0,0,0.06); transition: all 0.3s; border: 1px solid var(--border); }
-    .card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
-    .card-icon { font-size: 2.5rem; margin-bottom: 1rem; }
-    .card h3 { margin-bottom: 0.5rem; color: var(--dark); font-size: 1.15rem; }
-    .card p { color: var(--gray); font-size: 0.95rem; }
-    
-    /* ARTICLE CARDS */
-    .article-card { overflow: hidden; }
-    .article-card .card-tag { display: inline-block; background: #E8F5E9; color: var(--primary); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin-bottom: 0.75rem; }
-    .article-card h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
-    .article-card h3 a { color: var(--dark); }
-    .article-card h3 a:hover { color: var(--primary); }
-    .article-card .read-time { font-size: 0.85rem; color: var(--gray); margin-bottom: 0.5rem; }
-    .article-card .excerpt { font-size: 0.9rem; color: var(--gray); margin-bottom: 1rem; }
-    
-    /* TESTIMONIALS */
-    .testimonial { background: var(--white); border-radius: 12px; padding: 2rem; border-left: 4px solid var(--primary); box-shadow: 0 2px 15px rgba(0,0,0,0.06); }
-    .testimonial p { font-style: italic; color: var(--dark); margin-bottom: 1rem; font-size: 0.95rem; }
-    .testimonial .author { font-weight: 700; color: var(--primary); font-size: 0.9rem; }
-    
-    /* ARTICLE PAGE */
-    .article-hero { background: linear-gradient(135deg, #e8f5e9 0%, #e3f2fd 100%); padding: 4rem 2rem 3rem; text-align: center; }
-    .article-hero h1 { font-size: 2.2rem; max-width: 800px; margin: 0 auto 1rem; }
-    .article-hero .meta { color: var(--gray); font-size: 0.9rem; }
-    .breadcrumb { font-size: 0.85rem; color: var(--gray); margin-bottom: 1.5rem; }
-    .breadcrumb a { color: var(--secondary); }
-    .article-content { max-width: 780px; margin: 0 auto; padding: 3rem 2rem; }
-    .article-content h2 { font-size: 1.6rem; color: var(--dark); margin: 2.5rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--border); }
-    .article-content h3 { font-size: 1.25rem; color: var(--dark); margin: 2rem 0 0.75rem; }
-    .article-content p { margin-bottom: 1.2rem; color: #374151; }
-    .article-content ul, .article-content ol { margin: 1rem 0 1.5rem 1.5rem; color: #374151; }
-    .article-content li { margin-bottom: 0.5rem; }
-    
-    /* PRODUCT BOX */
-    .product-box { background: linear-gradient(135deg, #f0fdf4, #ecfdf5); border: 2px solid var(--primary); border-radius: 12px; padding: 2rem; margin: 2rem 0; text-align: center; }
-    .product-box h4 { color: var(--primary); margin-bottom: 0.5rem; font-size: 1.2rem; }
-    .product-box p { color: var(--gray); margin-bottom: 1rem; }
-    
-    /* SUPPLEMENT PAGE */
-    .supp-card { background: var(--white); border-radius: 16px; padding: 2.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 2px solid var(--border); margin-bottom: 2rem; position: relative; overflow: hidden; }
-    .supp-card.featured { border-color: var(--accent); }
-    .supp-badge { display: inline-block; padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.85rem; font-weight: 700; margin-bottom: 1rem; }
-    .badge-gold { background: #FEF3C7; color: #92400E; }
-    .badge-blue { background: #DBEAFE; color: #1E40AF; }
-    .badge-green { background: #D1FAE5; color: #065F46; }
-    .supp-card h3 { font-size: 1.5rem; margin-bottom: 0.5rem; }
-    .supp-card .price { font-size: 1.3rem; color: var(--primary); font-weight: 700; margin-bottom: 1rem; }
-    .stars { color: var(--accent); font-size: 1.1rem; margin-bottom: 1rem; }
-    .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0; }
-    .pros h4 { color: var(--primary); margin-bottom: 0.5rem; }
-    .cons h4 { color: #DC2626; margin-bottom: 0.5rem; }
-    .pros li, .cons li { font-size: 0.9rem; margin-bottom: 0.3rem; }
-    
-    /* TABLE */
-    .table-wrap { overflow-x: auto; margin: 2rem 0; }
-    table { width: 100%; border-collapse: collapse; }
-    th { background: var(--primary); color: var(--white); padding: 1rem; text-align: left; font-size: 0.9rem; }
-    td { padding: 0.85rem 1rem; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
-    tr:hover { background: #f0fdf4; }
-    
-    /* CTA SECTION */
-    .cta-section { background: linear-gradient(135deg, var(--primary), var(--secondary)); padding: 4rem 2rem; text-align: center; color: var(--white); border-radius: 0; }
-    .cta-section h2 { font-size: 2rem; margin-bottom: 1rem; color: var(--white); }
-    .cta-section p { font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.9; max-width: 600px; margin-left: auto; margin-right: auto; margin-bottom: 2rem; }
-    .cta-section .btn-primary { background: var(--accent); color: var(--white); font-size: 1.1rem; padding: 1rem 2.5rem; }
-    
-    /* FOOTER */
-    .footer { background: var(--dark); color: #9CA3AF; padding: 3rem 2rem 1.5rem; }
-    .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; max-width: 1100px; margin: 0 auto 2rem; }
-    .footer h4 { color: var(--white); margin-bottom: 1rem; font-size: 1rem; }
-    .footer a { color: #9CA3AF; display: block; margin-bottom: 0.5rem; font-size: 0.9rem; }
-    .footer a:hover { color: var(--accent); }
-    .footer-bottom { text-align: center; padding-top: 1.5rem; border-top: 1px solid #374151; font-size: 0.8rem; max-width: 800px; margin: 0 auto; }
-    .footer-disclaimer { font-size: 0.75rem; color: #6B7280; margin-top: 1rem; line-height: 1.5; }
-    
-    /* LEGAL PAGES */
-    .legal-content { max-width: 780px; margin: 0 auto; padding: 3rem 2rem; }
-    .legal-content h1 { font-size: 2rem; margin-bottom: 0.5rem; }
-    .legal-content .updated { color: var(--gray); margin-bottom: 2rem; }
-    .legal-content h2 { font-size: 1.4rem; margin: 2rem 0 0.75rem; color: var(--dark); }
-    .legal-content p { margin-bottom: 1rem; color: #374151; }
-    .legal-content ul { margin: 0.5rem 0 1.5rem 1.5rem; color: #374151; }
-    .legal-content li { margin-bottom: 0.4rem; }
-    
-    /* DISCLOSURE BANNER */
-    .disclosure-banner { background: #FEF3C7; border-bottom: 1px solid #FDE68A; padding: 0.75rem 2rem; text-align: center; font-size: 0.85rem; color: #92400E; }
-    .disclosure-banner a { color: #92400E; font-weight: 600; text-decoration: underline; }
-    
-    /* VIDEO PLACEHOLDER */
-    .video-placeholder { background: #1A1A2E; border-radius: 12px; padding: 3rem 2rem; text-align: center; color: white; margin: 2rem 0; max-width: 640px; margin-left: auto; margin-right: auto; }
-    .video-placeholder .play-icon { font-size: 3rem; margin-bottom: 1rem; }
-    .video-placeholder p { opacity: 0.8; font-size: 0.9rem; }
-
-    /* BACK TO TOP */
-    .back-top { position: fixed; bottom: 2rem; right: 2rem; background: var(--primary); color: white; width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; cursor: pointer; opacity: 0; transition: all 0.3s; z-index: 99; border: none; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
-    .back-top.show { opacity: 1; }
-    .back-top:hover { background: #236B3E; transform: translateY(-2px); }
-
-    /* FAQ */
-    .faq-item { border: 1px solid var(--border); border-radius: 8px; margin-bottom: 0.75rem; overflow: hidden; }
-    .faq-q { padding: 1rem 1.5rem; cursor: pointer; font-weight: 600; display: flex; justify-content: space-between; align-items: center; background: var(--white); }
-    .faq-q:hover { background: var(--light); }
-    .faq-a { padding: 0 1.5rem; max-height: 0; overflow: hidden; transition: all 0.3s; }
-    .faq-a.open { padding: 1rem 1.5rem; max-height: 500px; }
-    
-    /* SEARCH */
-    .search-box { max-width: 500px; margin: 0 auto 2rem; }
-    .search-box input { width: 100%; padding: 0.85rem 1.5rem; border: 2px solid var(--border); border-radius: 8px; font-size: 1rem; outline: none; }
-    .search-box input:focus { border-color: var(--primary); }
-    
-    /* FILTERS */
-    .filters { display: flex; gap: 0.5rem; justify-content: center; margin-bottom: 2rem; flex-wrap: wrap; }
-    .filter-btn { padding: 0.5rem 1rem; border: 2px solid var(--border); border-radius: 20px; background: var(--white); cursor: pointer; font-size: 0.9rem; transition: all 0.3s; }
-    .filter-btn:hover, .filter-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
-    
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-        .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--white); flex-direction: column; padding: 1rem 2rem; border-bottom: 1px solid var(--border); box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        .nav-links.open { display: flex; }
-        .nav-toggle { display: block; }
-        .hero h1 { font-size: 1.8rem; }
-        .hero p { font-size: 1rem; }
-        .section-title { font-size: 1.5rem; }
-        .pros-cons { grid-template-columns: 1fr; }
-        .article-content { padding: 2rem 1.2rem; }
+    body {
+        font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+        color: var(--ink);
+        line-height: 1.65;
+        background: var(--white);
     }
-    </style>
+    a { color: inherit; text-decoration: none; transition: 0.25s ease; }
+    img { max-width: 100%; display: block; }
+    .nav {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: rgba(255,255,255,0.94);
+        backdrop-filter: blur(14px);
+        border-bottom: 1px solid var(--border);
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .nav-brand { color: var(--primary); font-size: 1.45rem; font-weight: 900; letter-spacing: 0; }
+    .nav-brand span { color: var(--accent); }
+    .nav-links { display: flex; gap: 1.25rem; align-items: center; flex-wrap: wrap; }
+    .nav-links a { color: var(--ink); font-weight: 650; font-size: 0.94rem; }
+    .nav-links a:hover, .nav-links a.active { color: var(--primary); }
+    .nav-toggle { display: none; border: 0; background: transparent; font-size: 1.5rem; cursor: pointer; color: var(--ink); }
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.45rem;
+        min-height: 44px;
+        padding: 0.78rem 1.25rem;
+        border-radius: 8px;
+        border: 1px solid transparent;
+        font-weight: 800;
+        font-size: 0.96rem;
+        cursor: pointer;
+    }
+    .btn-primary { background: var(--accent); color: var(--white); box-shadow: 0 10px 24px rgba(245, 158, 11, 0.28); }
+    .btn-primary:hover { background: #D97706; transform: translateY(-2px); }
+    .btn-green { background: var(--primary); color: var(--white); }
+    .btn-green:hover { background: var(--primary-dark); transform: translateY(-2px); }
+    .btn-outline { border-color: var(--border); color: var(--ink); background: var(--white); }
+    .btn-outline:hover { border-color: var(--primary); color: var(--primary); transform: translateY(-2px); }
+    .btn-shop { background: #EE4D2D; color: var(--white); }
+    .btn-amazon { background: #131921; color: var(--white); }
+    .btn-ml { background: #FFE600; color: #2D3277; }
+    .btn-shop:hover, .btn-amazon:hover, .btn-ml:hover { transform: translateY(-2px); filter: brightness(0.96); }
+    .btn-sm { min-height: 38px; padding: 0.58rem 0.85rem; font-size: 0.88rem; }
+    .hero {
+        background:
+            radial-gradient(circle at 15% 20%, rgba(34,139,87,0.14), transparent 34%),
+            radial-gradient(circle at 86% 14%, rgba(36,99,235,0.12), transparent 30%),
+            linear-gradient(135deg, #F8FFF9 0%, #EEF7FF 56%, #FFF7E8 100%);
+        padding: 4.5rem 2rem 3.5rem;
+    }
+    .hero-inner {
+        max-width: 1120px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1.06fr 0.94fr;
+        gap: 3rem;
+        align-items: center;
+    }
+    .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        padding: 0.35rem 0.75rem;
+        border: 1px solid #B7E5C7;
+        border-radius: 999px;
+        color: var(--primary-dark);
+        background: rgba(255,255,255,0.78);
+        font-size: 0.84rem;
+        font-weight: 800;
+        margin-bottom: 1rem;
+    }
+    .hero h1 { font-size: clamp(2.1rem, 4.5vw, 4.15rem); line-height: 1.06; max-width: 770px; letter-spacing: 0; margin-bottom: 1.1rem; }
+    .hero p { color: #42526B; font-size: 1.14rem; max-width: 680px; margin-bottom: 1.65rem; }
+    .hero-actions { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+    .trust-row { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem; color: #526173; font-size: 0.92rem; }
+    .trust-row span { display: inline-flex; align-items: center; gap: 0.35rem; }
+    .hero-panel {
+        background: rgba(255,255,255,0.82);
+        border: 1px solid rgba(255,255,255,0.92);
+        box-shadow: var(--shadow);
+        border-radius: 8px;
+        padding: 1.2rem;
+    }
+    .deal-strip {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+    .mini-deal {
+        display: grid;
+        grid-template-columns: 54px 1fr;
+        gap: 0.85rem;
+        align-items: center;
+        padding: 0.95rem;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        background: var(--white);
+    }
+    .mini-icon {
+        width: 54px;
+        height: 54px;
+        display: grid;
+        place-items: center;
+        border-radius: 8px;
+        background: var(--soft);
+        font-size: 1.55rem;
+    }
+    .mini-deal strong { display: block; line-height: 1.25; }
+    .mini-deal small { color: var(--muted); display: block; margin-top: 0.12rem; }
+    .section { padding: 4rem 2rem; }
+    .section-inner { max-width: 1120px; margin: 0 auto; }
+    .section-alt { background: var(--soft); }
+    .section-head { display: flex; justify-content: space-between; gap: 1.5rem; align-items: end; margin-bottom: 1.8rem; }
+    .section-title { font-size: clamp(1.65rem, 3vw, 2.35rem); line-height: 1.15; letter-spacing: 0; }
+    .section-subtitle { color: var(--muted); max-width: 700px; font-size: 1rem; margin-top: 0.55rem; }
+    .cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+    .category-card, .guide-card, .product-card, .notice-card {
+        background: var(--white);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        box-shadow: 0 10px 28px rgba(23, 32, 51, 0.06);
+    }
+    .category-card { padding: 1.25rem; }
+    .category-icon { width: 44px; height: 44px; border-radius: 8px; background: var(--soft-blue); display: grid; place-items: center; font-size: 1.35rem; margin-bottom: 0.85rem; }
+    .category-card h3 { font-size: 1.05rem; margin-bottom: 0.35rem; }
+    .category-card p { color: var(--muted); font-size: 0.94rem; }
+    .product-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.15rem; }
+    .product-card { overflow: hidden; display: grid; grid-template-rows: auto 1fr; }
+    .product-top {
+        min-height: 142px;
+        padding: 1.1rem;
+        display: grid;
+        grid-template-columns: 78px 1fr;
+        gap: 1rem;
+        align-items: center;
+        background: linear-gradient(135deg, #F0FAF4, #F2F7FF);
+        border-bottom: 1px solid var(--border);
+    }
+    .product-visual {
+        width: 78px;
+        aspect-ratio: 1;
+        border-radius: 8px;
+        display: grid;
+        place-items: center;
+        background: var(--white);
+        border: 1px solid #DCEFE5;
+        box-shadow: 0 10px 24px rgba(23, 32, 51, 0.08);
+        font-size: 2rem;
+    }
+    .badge {
+        display: inline-flex;
+        width: fit-content;
+        padding: 0.25rem 0.6rem;
+        border-radius: 999px;
+        background: #E9F7EF;
+        color: var(--primary-dark);
+        font-weight: 850;
+        font-size: 0.76rem;
+        margin-bottom: 0.42rem;
+    }
+    .product-top h3 { font-size: 1.16rem; line-height: 1.24; }
+    .product-body { padding: 1.15rem; display: flex; flex-direction: column; gap: 0.95rem; }
+    .product-body p { color: #4D5B6C; font-size: 0.95rem; }
+    .fit-list { list-style: none; display: grid; gap: 0.42rem; color: #344054; font-size: 0.91rem; }
+    .fit-list li::before { content: "✓"; color: var(--primary); font-weight: 900; margin-right: 0.45rem; }
+    .store-buttons { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.5rem; margin-top: auto; }
+    .store-buttons.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .microcopy { color: var(--muted); font-size: 0.78rem; margin-top: -0.35rem; }
+    .guide-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+    .guide-card { padding: 1.25rem; }
+    .guide-card span { color: var(--primary); font-weight: 850; font-size: 0.82rem; text-transform: uppercase; }
+    .guide-card h3 { margin: 0.45rem 0; font-size: 1.08rem; line-height: 1.28; }
+    .guide-card p { color: var(--muted); font-size: 0.94rem; margin-bottom: 0.95rem; }
+    .notice-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 1rem; align-items: stretch; }
+    .notice-card { padding: 1.4rem; }
+    .notice-card h2 { font-size: 1.45rem; margin-bottom: 0.55rem; }
+    .notice-card p, .notice-card li { color: #4D5B6C; font-size: 0.95rem; }
+    .notice-card ul { margin: 0.75rem 0 0 1.2rem; }
+    .cta-section {
+        background: linear-gradient(135deg, var(--primary-dark), var(--secondary));
+        padding: 4rem 2rem;
+        color: var(--white);
+        text-align: center;
+    }
+    .cta-section h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); margin-bottom: 0.75rem; }
+    .cta-section p { max-width: 680px; margin: 0 auto 1.5rem; opacity: 0.92; }
+    .footer { background: #111827; color: #AAB2C0; padding: 3rem 2rem 1.5rem; }
+    .footer-grid { max-width: 1120px; margin: 0 auto 2rem; display: grid; grid-template-columns: 1.1fr 0.7fr 0.7fr; gap: 2rem; }
+    .footer h4 { color: var(--white); margin-bottom: 0.85rem; }
+    .footer a { display: block; color: #AAB2C0; margin-bottom: 0.45rem; font-size: 0.92rem; }
+    .footer a:hover { color: var(--accent); }
+    .footer-bottom { max-width: 850px; margin: 0 auto; border-top: 1px solid #344054; padding-top: 1.2rem; text-align: center; font-size: 0.82rem; }
+    .footer-disclaimer { margin-top: 0.75rem; color: #8B95A5; }
+    .back-top {
+        position: fixed;
+        bottom: 1.4rem;
+        right: 1.4rem;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        border: 0;
+        background: var(--primary);
+        color: var(--white);
+        font-size: 1.2rem;
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+        opacity: 0;
+        pointer-events: none;
+        transition: 0.25s ease;
+        box-shadow: 0 10px 26px rgba(23,32,51,0.22);
+    }
+    .back-top.show { opacity: 1; pointer-events: auto; }
+    @media (max-width: 900px) {
+        .hero-inner, .notice-grid { grid-template-columns: 1fr; }
+        .product-grid, .cards, .guide-grid { grid-template-columns: 1fr 1fr; }
+        .section-head { display: block; }
+        .footer-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 680px) {
+        .nav { padding: 0.9rem 1rem; }
+        .nav-toggle { display: block; }
+        .nav-links {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            padding: 1rem;
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+            box-shadow: 0 14px 26px rgba(23,32,51,0.08);
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .nav-links.open { display: flex; }
+        .hero { padding: 3rem 1rem 2.5rem; }
+        .hero-actions, .trust-row { display: grid; grid-template-columns: 1fr; }
+        .section { padding: 3rem 1rem; }
+        .product-grid, .cards, .guide-grid { grid-template-columns: 1fr; }
+        .product-top { grid-template-columns: 66px 1fr; }
+        .product-visual { width: 66px; font-size: 1.7rem; }
+        .store-buttons, .store-buttons.two { grid-template-columns: 1fr; }
+        .btn { width: 100%; }
+    }
+</style>
 </head>
 <body>
-
     <nav class="nav">
         <a href="index.html" class="nav-brand">Energia<span>Vital</span></a>
-        <button class="nav-toggle" aria-label="Menu">☰</button>
+        <button class="nav-toggle" aria-label="Abrir menu">☰</button>
         <div class="nav-links">
-            <a href="index.html">Início</a>
+            <a href="index.html" class="active">Início</a>
+            <a href="#guias">Guias</a>
             <a href="blog.html">Blog</a>
-            <a href="suplementos.html">Suplementos Recomendados</a>
-            <a href="privacidade.html">Privacidade</a>
-            <a href="termos.html">Termos</a>
-            <a href="aviso-afiliados.html">Aviso de Afiliados</a>
+            <a href="suplementos.html">Suplementos</a>
+            <a href="#produtos">Produtos</a>
         </div>
     </nav>
-    <section class="hero">
-        <h1>Você acorda cansado mesmo dormindo?<br>Descubra o que pode estar por trás disso</h1>
-        <p>Fadiga, falta de foco e energia baixa têm causas reais — e muitas vezes ignoradas. Milhares de brasileiros enfrentam isso diariamente.</p>
-        <a href="blog.html" class="btn btn-primary">Entender as causas agora →</a>
-    </section>
 
-    <section class="section">
-        <h2 class="section-title">Por Que Você Se Sente Esgotado?</h2>
-        <p class="section-subtitle">Estas são algumas das causas mais comuns — e frequentemente ignoradas — da fadiga persistente</p>
-        <div class="cards">
-            <div class="card"><div class="card-icon">🧲</div><h3>Deficiência de Magnésio</h3><p>Seu corpo precisa de magnésio para produzir energia. A maioria dos brasileiros não consome o suficiente pela alimentação.</p></div>
-            <div class="card"><div class="card-icon">🌙</div><h3>Sono de Baixa Qualidade</h3><p>Dormir muito não significa dormir bem. A qualidade do sono é mais importante que a quantidade de horas.</p></div>
-            <div class="card"><div class="card-icon">😰</div><h3>Estresse Crônico</h3><p>O cortisol elevado rouba sua energia e prejudica o foco ao longo do dia, criando um ciclo vicioso.</p></div>
-            <div class="card"><div class="card-icon">💊</div><h3>Deficiências Nutricionais</h3><p>Vitaminas do complexo B, ferro, CoQ10 e ômega-3 são essenciais para a produção de energia e função cerebral.</p></div>
+    <header class="hero">
+        <div class="hero-inner">
+            <div>
+                <span class="eyebrow">Energia, sono e rotina em um só lugar</span>
+                <h1>Para quem está cansado, dormindo mal ou perdendo o ritmo da rotina.</h1>
+                <p>A EnergiaVital reúne conteúdo educativo e uma curadoria responsável de produtos para apoiar quem busca mais disposição, sono melhor, foco e hábitos saudáveis. Antes de comprar qualquer coisa, entenda o que pode ajudar e por que pode fazer sentido para você.</p>
+                <div class="hero-actions">
+                    <a href="#guias" class="btn btn-primary">Ler guias rápidos</a>
+                    <a href="#produtos" class="btn btn-outline">Ver produtos recomendados</a>
+                </div>
+                <div class="trust-row">
+                    <span>✓ Conteúdo educativo antes da compra</span>
+                    <span>✓ Curadoria com propósito, não vitrine</span>
+                    <span>✓ Decisão simples e rápida</span>
+                </div>
+            </div>
+            <aside class="hero-panel" aria-label="Três pontos de partida da curadoria EnergiaVital">
+                <p style="font-size:0.82rem; font-weight:800; color:var(--primary-dark); text-transform:uppercase; letter-spacing:0.04em; margin-bottom:0.55rem;">Três pontos de partida da curadoria</p>
+                <div class="deal-strip">
+                    <a class="mini-deal" href="https://amzn.to/4dzp0Kl" target="_blank" rel="nofollow sponsored noopener">
+                        <span class="mini-icon">⚡</span>
+                        <span><strong>Creatina Monohidratada Soldiers</strong><small>Opção para quem quer construir constância no treino.</small></span>
+                    </a>
+                    <a class="mini-deal" href="https://amzn.to/3QXpelW" target="_blank" rel="nofollow sponsored noopener">
+                        <span class="mini-icon">🌙</span>
+                        <span><strong>Trio Magnésio Ocean Drop</strong><small>Procurado por quem quer organizar a rotina noturna.</small></span>
+                    </a>
+                    <a class="mini-deal" href="https://meli.la/1C6mgb6" target="_blank" rel="nofollow sponsored noopener">
+                        <span class="mini-icon">🔋</span>
+                        <span><strong>Coenzima Q10 Vitafor</strong><small>Item buscado por quem investe em autocuidado de longo prazo.</small></span>
+                    </a>
+                </div>
+            </aside>
+        </div>
+    </header>
+
+    <section class="section" aria-labelledby="categorias-title">
+        <div class="section-inner">
+            <div class="section-head">
+                <div>
+                    <h2 id="categorias-title" class="section-title">Comece pelo que você quer melhorar</h2>
+                    <p class="section-subtitle">A EnergiaVital organiza a informação por necessidade real, não por empurrar produto. Entenda primeiro, decida depois.</p>
+                </div>
+                <a href="blog.html" class="btn btn-outline">Explorar conteúdo</a>
+            </div>
+            <div class="cards">
+                <article class="category-card">
+                    <div class="category-icon">⚡</div>
+                    <h3>Energia e treino</h3>
+                    <p>Como retomar constância, evitar o cansaço crônico e organizar a rotina sem fórmulas mágicas.</p>
+                    <a href="artigo-cansaco-constante.html" style="display:inline-block; margin-top:0.55rem; color:var(--primary); font-weight:800; font-size:0.9rem;">Ler artigo →</a>
+                </article>
+                <article class="category-card">
+                    <div class="category-icon">🌙</div>
+                    <h3>Sono e recuperação</h3>
+                    <p>Por que você acorda cansado mesmo dormindo, e o que pode ser ajustado antes de pensar em suplemento.</p>
+                    <a href="artigo-cansaco-dormir.html" style="display:inline-block; margin-top:0.55rem; color:var(--primary); font-weight:800; font-size:0.9rem;">Ler artigo →</a>
+                </article>
+                <article class="category-card">
+                    <div class="category-icon">💧</div>
+                    <h3>Hábitos diários</h3>
+                    <p>Hidratação, sono, foco e nutrição: pequenas escolhas que sustentam a energia ao longo do dia.</p>
+                    <a href="artigo-sono-energia.html" style="display:inline-block; margin-top:0.55rem; color:var(--primary); font-weight:800; font-size:0.9rem;">Ler artigo →</a>
+                </article>
+            </div>
         </div>
     </section>
 
-    <section class="section section-alt">
-        <h2 class="section-title">Soluções Práticas</h2>
-        <p class="section-subtitle">Abordagens naturais que podem ajudar você a recuperar energia e clareza mental</p>
-        <div class="cards">
-            <div class="card"><div class="card-icon">💊</div><h3>Suplementação Inteligente</h3><p>Nutrientes como magnésio glicinato, complexo B e adaptógenos podem apoiar a produção de energia do seu corpo.</p><br><a href="suplementos.html" class="btn btn-green btn-sm">Ver Recomendações →</a></div>
-            <div class="card"><div class="card-icon">😴</div><h3>Otimização do Sono</h3><p>Mudanças simples no seu ambiente e rotina de sono podem melhorar drasticamente a qualidade do seu descanso.</p><br><a href="artigo-cansaco-dormir.html" class="btn btn-outline btn-sm">Saiba Mais →</a></div>
-            <div class="card"><div class="card-icon">🧘</div><h3>Gerenciamento do Estresse</h3><p>Ervas adaptógenas e técnicas práticas podem ajudar seu corpo a lidar melhor com o estresse diário.</p><br><a href="artigo-cansaco-constante.html" class="btn btn-outline btn-sm">Ler Artigo →</a></div>
+    <section id="produtos" class="section section-alt" aria-labelledby="produtos-title">
+        <div class="section-inner">
+            <div class="section-head">
+                <div>
+                    <h2 id="produtos-title" class="section-title">Produtos da curadoria EnergiaVital</h2>
+                    <p class="section-subtitle">Itens selecionados com critério para quem quer apoiar treino, sono, hidratação e bem-estar com responsabilidade. Leia antes de comprar e escolha o que faz sentido para você.</p>
+                </div>
+                <a href="#guias" class="btn btn-outline">Ver guia antes</a>
+            </div>
+
+            <div class="product-grid">
+                <article class="product-card">
+                    <div class="product-top">
+                        <div class="product-visual">⚡</div>
+                        <div>
+                            <span class="badge">Mais desejado</span>
+                            <h3>Creatina Monohidratada Soldiers Nutrition 500g</h3>
+                        </div>
+                    </div>
+                    <div class="product-body">
+                        <p>Para quem decidiu sair do “vou começar um dia” e construir constância. A creatina é uma das escolhas mais procuradas por quem treina e quer apoiar performance, força e recuperação muscular.</p>
+                        <ul class="fit-list">
+                            <li>Ideal para rotina de academia, treino em casa ou volta aos exercícios</li>
+                            <li>Pote de 500g com excelente apelo de custo por dose</li>
+                            <li>Escolha forte para começar pelo essencial</li>
+                        </ul>
+                        <div class="store-buttons">
+                            <a class="btn btn-sm btn-amazon" href="https://amzn.to/4dzp0Kl" target="_blank" rel="nofollow sponsored noopener">Amazon</a>
+                            <a class="btn btn-sm btn-shop" href="https://s.shopee.com.br/5flUScOXlA" target="_blank" rel="nofollow sponsored noopener">Shopee</a>
+                            <a class="btn btn-sm btn-ml" href="https://meli.la/2ebjvHH" target="_blank" rel="nofollow sponsored noopener">Mercado Livre</a>
+                        </div>
+                        <p class="microcopy">Compare a loja de sua preferência. Confira sempre informações da marca antes de comprar.</p>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-top">
+                        <div class="product-visual">🌙</div>
+                        <div>
+                            <span class="badge">Rotina noturna</span>
+                            <h3>Trio Magnésio Ocean Drop 60 cápsulas</h3>
+                        </div>
+                    </div>
+                    <div class="product-body">
+                        <p>Para quem chega ao fim do dia esgotado e quer cuidar melhor do corpo. O magnésio é muito buscado por pessoas que desejam apoiar músculos, relaxamento e uma rotina de descanso mais organizada.</p>
+                        <ul class="fit-list">
+                            <li>Boa escolha para quem cuida de sono e recuperação</li>
+                            <li>Formato prático em cápsulas para uso diário</li>
+                            <li>Produto conectado ao principal tema da EnergiaVital</li>
+                        </ul>
+                        <div class="store-buttons two">
+                            <a class="btn btn-sm btn-amazon" href="https://amzn.to/3QXpelW" target="_blank" rel="nofollow sponsored noopener">Amazon</a>
+                            <a class="btn btn-sm btn-ml" href="https://meli.la/2k11hgn" target="_blank" rel="nofollow sponsored noopener">Mercado Livre</a>
+                        </div>
+                        <p class="microcopy">Procure orientação profissional sobre dosagem e adequação ao seu caso antes do uso contínuo.</p>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-top">
+                        <div class="product-visual">🔋</div>
+                        <div>
+                            <span class="badge">Vitalidade</span>
+                            <h3>Coenzima Q10 200mg Vitafor 120 cápsulas</h3>
+                        </div>
+                    </div>
+                    <div class="product-body">
+                        <p>Para quem quer investir em autocuidado de forma mais séria. A Coenzima Q10 é procurada por quem pesquisa vitalidade, energia celular e uma rotina de bem-estar mais completa.</p>
+                        <ul class="fit-list">
+                            <li>Opção premium para público adulto</li>
+                            <li>Boa para complementar uma rotina de suplementação bem pensada</li>
+                            <li>Marca conhecida no segmento de suplementos</li>
+                        </ul>
+                        <div class="store-buttons two">
+                            <a class="btn btn-sm btn-ml" href="https://meli.la/1C6mgb6" target="_blank" rel="nofollow sponsored noopener">Mercado Livre</a>
+                            <a class="btn btn-sm btn-outline" href="artigo-melhores-suplementos.html">Ler guia</a>
+                        </div>
+                        <p class="microcopy">Suplementação responsável combina com orientação profissional e hábitos consistentes.</p>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-top">
+                        <div class="product-visual">💧</div>
+                        <div>
+                            <span class="badge">Hábito fácil</span>
+                            <h3>Garrafa térmica inox e garrafa motivacional</h3>
+                        </div>
+                    </div>
+                    <div class="product-body">
+                        <p>Energia também vem dos hábitos pequenos. Uma boa garrafa deixa a água por perto, facilita a constância e ajuda você a manter o ritmo no trabalho, treino ou estudo.</p>
+                        <ul class="fit-list">
+                            <li>Ótima para academia, escritório e deslocamentos</li>
+                            <li>Ajuda a transformar hidratação em hábito visível</li>
+                            <li>Compra prática, útil e de uso imediato</li>
+                        </ul>
+                        <div class="store-buttons two">
+                            <a class="btn btn-sm btn-shop" href="https://s.shopee.com.br/5q4uevNuQD" target="_blank" rel="nofollow sponsored noopener">Shopee</a>
+                            <a class="btn btn-sm btn-ml" href="https://meli.la/2UEeRmu" target="_blank" rel="nofollow sponsored noopener">Mercado Livre</a>
+                        </div>
+                        <p class="microcopy">Hidratação consistente é um dos hábitos com maior impacto no dia a dia.</p>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-top">
+                        <div class="product-visual">🛏️</div>
+                        <div>
+                            <span class="badge">Conforto ao dormir</span>
+                            <h3>Travesseiro Cervical Fibrasca 50x70cm</h3>
+                        </div>
+                    </div>
+                    <div class="product-body">
+                        <p>Se você acorda travado, desconfortável ou com a sensação de que não descansou bem, começar pelo travesseiro pode ser uma decisão simples e inteligente.</p>
+                        <ul class="fit-list">
+                            <li>Indicado para quem quer mais conforto na rotina de sono</li>
+                            <li>Produto de uso diário, com benefício percebido rapidamente</li>
+                            <li>Boa escolha para renovar o ambiente de descanso</li>
+                        </ul>
+                        <div class="store-buttons two">
+                            <a class="btn btn-sm btn-amazon" href="https://amzn.to/4fdIu8A" target="_blank" rel="nofollow sponsored noopener">Amazon</a>
+                            <a class="btn btn-sm btn-outline" href="artigo-cansaco-dormir.html">Ler sobre sono</a>
+                        </div>
+                        <p class="microcopy">Conforto noturno é uma das variáveis mais subestimadas em quem reclama de sono ruim.</p>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-top">
+                        <div class="product-visual">🧭</div>
+                        <div>
+                            <span class="badge">Decisão informada</span>
+                            <h3>Leia antes de comprar</h3>
+                        </div>
+                    </div>
+                    <div class="product-body">
+                        <p>A EnergiaVital reúne conteúdo educativo para você entender o que pode ajudar, antes de comparar produtos. Suplementação responsável começa com informação.</p>
+                        <ul class="fit-list">
+                            <li>Entenda primeiro a causa: cansaço, sono ruim, falta de foco ou rotina desgastante</li>
+                            <li>Veja o que a literatura e os fabricantes informam sobre cada item</li>
+                            <li>Só depois compare lojas e decida com calma</li>
+                        </ul>
+                        <div class="store-buttons two">
+                            <a class="btn btn-sm btn-green" href="#guias">Ler antes de decidir</a>
+                            <a class="btn btn-sm btn-outline" href="blog.html">Abrir blog</a>
+                        </div>
+                        <p class="microcopy">Comece pelo que faz sentido para sua fase atual — sem prometer milagre.</p>
+                    </div>
+                </article>
+            </div>
         </div>
     </section>
 
-    <section class="section">
-        <h2 class="section-title">O Que Nossos Leitores Dizem</h2>
-        <p class="section-subtitle">Experiências reais de pessoas que começaram a prestar atenção na sua energia</p>
-        <div class="cards">
-            <div class="testimonial"><p>"Depois de entender sobre a deficiência de magnésio, comecei a suplementar e percebi uma diferença enorme na minha disposição em poucas semanas."</p><span class="author">— Marina S., 34 anos, São Paulo</span></div>
-            <div class="testimonial"><p>"Os artigos me ajudaram a entender por que eu vivia tão cansado. Mudei alguns hábitos e já sinto mais energia no dia a dia."</p><span class="author">— Carlos R., 42 anos, Belo Horizonte</span></div>
-            <div class="testimonial"><p>"Finalmente encontrei informação clara e sem promessas milagrosas. Recomendo demais para quem está lidando com fadiga!"</p><span class="author">— Patrícia M., 29 anos, Curitiba</span></div>
+    <section id="guias" class="section" aria-labelledby="guias-title">
+        <div class="section-inner">
+            <div class="section-head">
+                <div>
+                    <h2 id="guias-title" class="section-title">Ainda em dúvida? Comece por estes guias</h2>
+                    <p class="section-subtitle">Respostas rápidas para escolher com mais segurança e comprar o produto certo para sua rotina.</p>
+                </div>
+            </div>
+            <div class="guide-grid">
+                <article class="guide-card">
+                    <span>Creatina</span>
+                    <h3>Creatina vale a pena para quem está começando?</h3>
+                    <p>Entenda por que tanta gente escolhe creatina e quando ela faz sentido na rotina.</p>
+                    <a href="artigo-melhores-suplementos.html" class="btn btn-outline btn-sm">Ler guia</a>
+                </article>
+                <article class="guide-card">
+                    <span>Magnésio</span>
+                    <h3>Tipos de magnésio: qual faz sentido pesquisar?</h3>
+                    <p>Veja os tipos mais buscados e como pensar na escolha com mais clareza.</p>
+                    <a href="artigo-magnesio.html" class="btn btn-outline btn-sm">Ler artigo</a>
+                </article>
+                <article class="guide-card">
+                    <span>Sono</span>
+                    <h3>Por que você acorda cansado mesmo dormindo?</h3>
+                    <p>Descubra ajustes simples que podem tornar sua noite mais confortável.</p>
+                    <a href="artigo-cansaco-dormir.html" class="btn btn-outline btn-sm">Ler artigo</a>
+                </article>
+            </div>
         </div>
     </section>
 
-    <section class="section section-alt">
-        <h2 class="section-title">Artigos em Destaque</h2>
-        <p class="section-subtitle">Comece por aqui para entender o que está drenando sua energia</p>
-        <div class="cards">
-            <div class="card article-card"><span class="card-tag">Sono</span><h3><a href="artigo-cansaco-dormir.html">Por que você acorda cansado mesmo dormindo?</a></h3><p class="excerpt">Descubra as razões escondidas por trás do cansaço ao acordar...</p><a href="artigo-cansaco-dormir.html" class="btn btn-outline btn-sm">Ler Artigo →</a></div>
-            <div class="card article-card"><span class="card-tag">Nutrição</span><h3><a href="artigo-magnesio.html">Falta de magnésio: sintomas e impactos no corpo</a></h3><p class="excerpt">Saiba como esse mineral essencial afeta tudo, do sono à clareza mental...</p><a href="artigo-magnesio.html" class="btn btn-outline btn-sm">Ler Artigo →</a></div>
-            <div class="card article-card"><span class="card-tag">Bem-Estar</span><h3><a href="artigo-cansaco-constante.html">Cansaço constante: o que pode estar acontecendo</a></h3><p class="excerpt">Entenda a conexão entre fadiga persistente e dificuldade cognitiva...</p><a href="artigo-cansaco-constante.html" class="btn btn-outline btn-sm">Ler Artigo →</a></div>
+    <section class="section section-alt" aria-labelledby="seguranca-title">
+        <div class="section-inner notice-grid">
+            <article class="notice-card">
+                <h2 id="seguranca-title">Escolhas simples, impacto diário</h2>
+                <p>Você não precisa mudar tudo de uma vez. Comece pelo produto que resolve a sua dor mais evidente hoje: mais constância no treino, sono mais confortável, hidratação visível ou uma rotina de suplementação melhor pensada.</p>
+                <ul>
+                    <li>Se o problema é treino parado, comece pela creatina.</li>
+                    <li>Se o problema é noite ruim, comece pelo travesseiro ou magnésio.</li>
+                    <li>Se o problema é rotina bagunçada, comece pela garrafa e torne o hábito visível.</li>
+                </ul>
+            </article>
+            <article class="notice-card">
+                <h2>Escolha um primeiro passo</h2>
+                <p>A maioria das pessoas não falha por falta de vontade. Falha porque tenta mudar tudo ao mesmo tempo. Escolha um item, comece hoje e melhore a rotina a partir dele.</p>
+                <ul>
+                    <li>Para treinar melhor: Creatina Soldiers</li>
+                    <li>Para dormir com mais conforto: Travesseiro Fibrasca</li>
+                    <li>Para rotina noturna: Magnésio Ocean Drop</li>
+                    <li>Para hidratação: garrafa térmica ou motivacional</li>
+                </ul>
+            </article>
         </div>
     </section>
 
     <section class="cta-section">
-        <h2>Não Aceite o Cansaço Como Normal</h2>
-        <p>Seu corpo está tentando te dizer algo. Explore nossos suplementos recomendados e comece sua jornada para mais energia hoje.</p>
-        <a href="suplementos.html" class="btn btn-primary">Ver Suplementos Recomendados →</a>
+        <h2>Cuidar da energia começa por informação</h2>
+        <p>Antes de qualquer compra, leia, compare e entenda o que faz sentido para a sua rotina. A EnergiaVital existe para ajudar você a decidir com mais clareza — e suplementar com responsabilidade.</p>
+        <div style="display:flex; gap:0.8rem; justify-content:center; flex-wrap:wrap;">
+            <a href="#guias" class="btn btn-primary">Começar pelos guias</a>
+            <a href="#produtos" class="btn btn-outline" style="background:rgba(255,255,255,0.12); color:var(--white); border-color:rgba(255,255,255,0.4);">Ver produtos recomendados</a>
+        </div>
     </section>
-    
+
     <footer class="footer">
         <div class="footer-grid">
             <div>
                 <h4>EnergiaVital</h4>
-                <p style="font-size:0.9rem;">Informações baseadas em evidências para ajudar você a recuperar sua energia e clareza mental de forma natural.</p>
+                <p>Curadoria de produtos e conteúdo educativo para energia, sono, hidratação, treino e bem-estar. Informação clara, links úteis e responsabilidade em primeiro lugar.</p>
             </div>
             <div>
                 <h4>Conteúdo</h4>
                 <a href="index.html">Início</a>
                 <a href="blog.html">Blog</a>
                 <a href="suplementos.html">Suplementos Recomendados</a>
+                <a href="artigo-melhores-suplementos.html">Melhores suplementos</a>
             </div>
             <div>
                 <h4>Legal</h4>
                 <a href="privacidade.html">Política de Privacidade</a>
                 <a href="termos.html">Termos de Uso</a>
-                <a href="aviso-afiliados.html">Aviso de Afiliados</a>
             </div>
         </div>
         <div class="footer-bottom">
             <p>&copy; 2026 EnergiaVital. Todos os direitos reservados.</p>
-            <p class="footer-disclaimer">Este site é apenas informativo e não substitui orientação médica profissional. Sempre consulte seu médico antes de iniciar qualquer suplementação. Resultados individuais podem variar.</p>
+            <p class="footer-disclaimer">Este site é informativo e não substitui orientação médica, nutricional ou profissional. Resultados individuais podem variar.</p>
         </div>
     </footer>
-<button class="back-top" aria-label="Back to top">↑</button>
-<script>
-    // Mobile nav toggle
-    document.addEventListener('DOMContentLoaded', function() {
-        const toggle = document.querySelector('.nav-toggle');
-        const links = document.querySelector('.nav-links');
-        if (toggle && links) {
-            toggle.addEventListener('click', () => links.classList.toggle('open'));
-        }
-        
-        // Back to top
-        const btn = document.querySelector('.back-top');
-        if (btn) {
-            window.addEventListener('scroll', () => {
-                btn.classList.toggle('show', window.scrollY > 400);
-            });
-            btn.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
-        }
-        
-        // FAQ accordion
-        document.querySelectorAll('.faq-q').forEach(q => {
-            q.addEventListener('click', () => {
-                const a = q.nextElementSibling;
-                a.classList.toggle('open');
-                q.querySelector('.faq-icon').textContent = a.classList.contains('open') ? '−' : '+';
-            });
-        });
-        
-        // Search filter
-        const search = document.getElementById('searchInput');
-        if (search) {
-            search.addEventListener('input', function() {
-                const val = this.value.toLowerCase();
-                document.querySelectorAll('.article-card').forEach(card => {
-                    const text = card.textContent.toLowerCase();
-                    card.style.display = text.includes(val) ? '' : 'none';
+
+    <button class="back-top" aria-label="Voltar ao topo">↑</button>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const toggle = document.querySelector(".nav-toggle");
+            const links = document.querySelector(".nav-links");
+            if (toggle && links) {
+                toggle.addEventListener("click", () => links.classList.toggle("open"));
+            }
+
+            const btn = document.querySelector(".back-top");
+            if (btn) {
+                window.addEventListener("scroll", () => {
+                    btn.classList.toggle("show", window.scrollY > 420);
                 });
-            });
-        }
-        
-        // Category filters
-        document.querySelectorAll('.filter-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-                const cat = this.dataset.cat;
-                document.querySelectorAll('.article-card').forEach(card => {
-                    if (cat === 'all' || card.dataset.cat === cat) {
-                        card.style.display = '';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-            });
+                btn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+            }
         });
-    });
     </script>
 </body>
 </html>

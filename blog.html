@@ -1,129 +1,147 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Artigos sobre energia, foco, fadiga e soluções naturais baseadas em evidências científicas.">
-<title>Blog — EnergiaVital</title>
+<meta name="description" content="Guias EnergiaVital para escolher produtos de energia, sono, treino, hidratação e bem-estar com segurança e decisão rápida.">
+<title>Guias de Energia, Sono e Bem-Estar - EnergiaVital</title>
 <link rel="stylesheet" href="css/style.css">
+<style>
+    .quick-shop { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:1rem; margin:2rem 0; }
+    .quick-card { background:#fff; border:1px solid var(--border); border-radius:14px; padding:1.4rem; box-shadow:0 4px 20px rgba(0,0,0,.07); }
+    .quick-card h3 { color:var(--dark); margin-bottom:.45rem; }
+    .quick-card p { color:var(--gray); font-size:.95rem; margin-bottom:1rem; }
+    .store-row { display:flex; flex-wrap:wrap; gap:.5rem; }
+    .store-row .btn { padding:.58rem .85rem; font-size:.86rem; }
+    .btn-amazon { background:#131921; color:#fff; }
+    .btn-shop { background:#EE4D2D; color:#fff; }
+    .btn-ml { background:#FFE600; color:#2D3277; }
+    .btn-amazon:hover, .btn-shop:hover, .btn-ml:hover { color:#fff; filter:brightness(.94); transform:translateY(-2px); }
+    .btn-ml:hover { color:#2D3277; }
+</style>
 </head>
 <body>
-
     <nav class="nav">
         <a href="index.html" class="nav-brand">Energia<span>Vital</span></a>
         <button class="nav-toggle" aria-label="Menu">☰</button>
         <div class="nav-links">
             <a href="index.html">Início</a>
-            <a href="blog.html">Blog</a>
-            <a href="suplementos.html">Suplementos Recomendados</a>
+            <a href="blog.html" class="active">Guias</a>
+            <a href="suplementos.html">Produtos Recomendados</a>
             <a href="privacidade.html">Privacidade</a>
             <a href="termos.html">Termos</a>
-            <a href="aviso-afiliados.html">Aviso de Afiliados</a>
         </div>
     </nav>
-    <section class="article-hero">
-        <h1>Blog — Energia, Foco e Bem-Estar</h1>
-        <p class="meta">Conteúdo baseado em evidências para ajudar você a entender e melhorar sua energia</p>
+
+    <section class="hero">
+        <h1>Guias rápidos para comprar melhor e começar hoje</h1>
+        <p>Energia baixa, treino parado, sono ruim ou hidratação esquecida? Escolha um caminho abaixo e veja produtos que fazem sentido para a sua rotina.</p>
+        <a href="suplementos.html" class="btn btn-primary">Ver produtos recomendados →</a>
     </section>
+
     <section class="section">
-        <div class="search-box"><input type="text" id="searchInput" placeholder="🔍 Buscar artigos..."></div>
-        <div class="filters">
-            <button class="filter-btn active" data-cat="all">Todos</button>
-            <button class="filter-btn" data-cat="sono">Sono</button>
-            <button class="filter-btn" data-cat="nutricao">Nutrição</button>
-            <button class="filter-btn" data-cat="suplementos">Suplementos</button>
-            <button class="filter-btn" data-cat="bemestar">Bem-Estar</button>
-        </div>
-        <div class="cards">
-            <div class="card article-card" data-cat="sono"><span class="card-tag">Sono</span><p class="read-time">⏱ 8 min de leitura</p><h3><a href="artigo-cansaco-dormir.html">Por que você acorda cansado mesmo dormindo?</a></h3><p class="excerpt">Descubra as razões escondidas por trás de acordar exausto e o que você pode fazer a respeito.</p><a href="artigo-cansaco-dormir.html" class="btn btn-outline btn-sm">Ler Artigo →</a></div>
-            <div class="card article-card" data-cat="nutricao"><span class="card-tag">Nutrição</span><p class="read-time">⏱ 7 min de leitura</p><h3><a href="artigo-magnesio.html">Falta de magnésio: sintomas e impactos no corpo</a></h3><p class="excerpt">Saiba como o magnésio afeta mais de 300 processos no seu corpo e por que a deficiência é tão comum.</p><a href="artigo-magnesio.html" class="btn btn-outline btn-sm">Ler Artigo →</a></div>
-            <div class="card article-card" data-cat="bemestar"><span class="card-tag">Bem-Estar</span><p class="read-time">⏱ 7 min de leitura</p><h3><a href="artigo-cansaco-constante.html">Cansaço constante: o que pode estar acontecendo</a></h3><p class="excerpt">Entenda a conexão entre fadiga persistente e dificuldade cognitiva.</p><a href="artigo-cansaco-constante.html" class="btn btn-outline btn-sm">Ler Artigo →</a></div>
-            <div class="card article-card" data-cat="suplementos"><span class="card-tag">Suplementos</span><p class="read-time">⏱ 10 min de leitura</p><h3><a href="artigo-melhores-suplementos.html">Melhores suplementos para energia e foco</a></h3><p class="excerpt">Guia completo e baseado em evidências dos melhores suplementos para combater a fadiga.</p><a href="artigo-melhores-suplementos.html" class="btn btn-outline btn-sm">Ler Artigo →</a></div>
-            <div class="card article-card" data-cat="sono"><span class="card-tag">Sono</span><p class="read-time">⏱ 8 min de leitura</p><h3><a href="artigo-sono-energia.html">Como o sono influencia sua energia e concentração</a></h3><p class="excerpt">A ciência por trás de como a qualidade do sono afeta diretamente seu foco e produtividade.</p><a href="artigo-sono-energia.html" class="btn btn-outline btn-sm">Ler Artigo →</a></div>
+        <h2 class="section-title">Atalhos para decisão</h2>
+        <p class="section-subtitle">Se você já sabe o que quer melhorar, vá direto ao produto certo.</p>
+        <div class="quick-shop">
+            <div class="quick-card">
+                <h3>Quero voltar a treinar com constância</h3>
+                <p>A creatina Soldiers 500g trabalha com creatina monohidratada como ingrediente principal. A própria página da marca informa porção de 5g e uso antes ou depois do treino, enquanto a literatura esportiva coloca a creatina monohidratada entre os suplementos mais estudados para performance em exercícios de alta intensidade.</p>
+                <div class="store-row">
+                    <a class="btn btn-amazon" href="https://amzn.to/4dzp0Kl" target="_blank" rel="nofollow sponsored noopener">Comprar na Amazon</a>
+                    <a class="btn btn-shop" href="https://s.shopee.com.br/5flUScOXlA" target="_blank" rel="nofollow sponsored noopener">Comprar na Shopee</a>
+                    <a class="btn btn-ml" href="https://meli.la/2ebjvHH" target="_blank" rel="nofollow sponsored noopener">Comprar no Mercado Livre</a>
+                </div>
+            </div>
+            <div class="quick-card">
+                <h3>Quero cuidar melhor do descanso</h3>
+                <p>Comece por conforto e rotina: a Mayo Clinic recomenda quarto fresco, escuro e silencioso, além de consistência de horários. O magnésio entra como escolha nutricional de apoio, já que o NIH descreve seu papel em energia, função muscular e sistema nervoso.</p>
+                <div class="store-row">
+                    <a class="btn btn-amazon" href="https://amzn.to/4fdIu8A" target="_blank" rel="nofollow sponsored noopener">Travesseiro Fibrasca</a>
+                    <a class="btn btn-amazon" href="https://amzn.to/3QXpelW" target="_blank" rel="nofollow sponsored noopener">Magnésio Ocean Drop</a>
+                    <a class="btn btn-ml" href="https://meli.la/2k11hgn" target="_blank" rel="nofollow sponsored noopener">Magnésio Ocean Drop</a>
+                </div>
+            </div>
+            <div class="quick-card">
+                <h3>Quero beber mais água sem esquecer</h3>
+                <p>Uma garrafa visível muda o jogo: o CDC recomenda carregar uma garrafa reutilizável como estratégia simples para beber mais água durante o dia. É o tipo de produto que não promete milagre, mas remove atrito.</p>
+                <div class="store-row">
+                    <a class="btn btn-shop" href="https://s.shopee.com.br/5q4uevNuQD" target="_blank" rel="nofollow sponsored noopener">Garrafa 2L</a>
+                    <a class="btn btn-ml" href="https://meli.la/2UEeRmu" target="_blank" rel="nofollow sponsored noopener">Garrafa térmica</a>
+                </div>
+            </div>
         </div>
     </section>
-    
+
+    <section class="section section-alt">
+        <h2 class="section-title">Leia antes de escolher</h2>
+        <p class="section-subtitle">Conteúdos curtos para tirar a dúvida e levar você ao próximo passo.</p>
+        <div class="cards">
+            <div class="card article-card" data-cat="sono">
+                <span class="card-tag">Sono</span>
+                <p class="read-time">8 min de leitura</p>
+                <h3><a href="artigo-cansaco-dormir.html">Por que você acorda cansado mesmo dormindo?</a></h3>
+                <p class="excerpt">Entenda por que horas de cama nem sempre significam descanso e veja escolhas simples para melhorar a noite.</p>
+                <a href="artigo-cansaco-dormir.html" class="btn btn-outline btn-sm">Ler e escolher melhor →</a>
+            </div>
+            <div class="card article-card" data-cat="nutricao">
+                <span class="card-tag">Nutrição</span>
+                <p class="read-time">7 min de leitura</p>
+                <h3><a href="artigo-magnesio.html">Magnésio: quando faz sentido pesquisar?</a></h3>
+                <p class="excerpt">Veja por que o magnésio aparece tanto nas buscas sobre rotina, músculos, sono e disposição.</p>
+                <a href="artigo-magnesio.html" class="btn btn-outline btn-sm">Ler sobre magnésio →</a>
+            </div>
+            <div class="card article-card" data-cat="suplementos">
+                <span class="card-tag">Suplementos</span>
+                <p class="read-time">10 min de leitura</p>
+                <h3><a href="artigo-melhores-suplementos.html">Melhores escolhas para energia e rotina ativa</a></h3>
+                <p class="excerpt">Creatina, magnésio e CoQ10 em uma leitura objetiva para quem quer decidir sem enrolação.</p>
+                <a href="artigo-melhores-suplementos.html" class="btn btn-outline btn-sm">Ver escolhas →</a>
+            </div>
+            <div class="card article-card" data-cat="bemestar">
+                <span class="card-tag">Bem-estar</span>
+                <p class="read-time">7 min de leitura</p>
+                <h3><a href="artigo-cansaco-constante.html">Cansaço constante: o que pode estar acontecendo</a></h3>
+                <p class="excerpt">Um guia para organizar a rotina e entender sinais que merecem atenção.</p>
+                <a href="artigo-cansaco-constante.html" class="btn btn-outline btn-sm">Ler artigo →</a>
+            </div>
+            <div class="card article-card" data-cat="sono">
+                <span class="card-tag">Sono</span>
+                <p class="read-time">8 min de leitura</p>
+                <h3><a href="artigo-sono-energia.html">Como o sono influencia sua energia e concentração</a></h3>
+                <p class="excerpt">O básico bem feito: ambiente, regularidade e decisões que deixam a noite mais favorável.</p>
+                <a href="artigo-sono-energia.html" class="btn btn-outline btn-sm">Ler artigo →</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2>Pronto para escolher?</h2>
+        <p>A melhor rotina começa com uma decisão pequena: escolha o produto que resolve sua necessidade de hoje.</p>
+        <a href="suplementos.html" class="btn btn-primary">Ver recomendações agora →</a>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Fontes consultadas</h2>
+        <p class="section-subtitle">As recomendações editoriais combinam dados dos fabricantes com referências de saúde e nutrição.</p>
+        <ul>
+            <li>International Society of Sports Nutrition: posição sobre creatina e exercício.</li>
+            <li>NIH Office of Dietary Supplements: ficha técnica sobre magnésio.</li>
+            <li>NCCIH/NIH e Mayo Clinic: informações sobre Coenzima Q10.</li>
+            <li>CDC: orientações sobre água e hidratação diária.</li>
+            <li>Mayo Clinic: hábitos para dormir melhor.</li>
+            <li>Soldiers Nutrition, Ocean Drop e Vitafor: composição e modo de uso.</li>
+        </ul>
+    </section>
+
     <footer class="footer">
         <div class="footer-grid">
-            <div>
-                <h4>EnergiaVital</h4>
-                <p style="font-size:0.9rem;">Informações baseadas em evidências para ajudar você a recuperar sua energia e clareza mental de forma natural.</p>
-            </div>
-            <div>
-                <h4>Conteúdo</h4>
-                <a href="index.html">Início</a>
-                <a href="blog.html">Blog</a>
-                <a href="suplementos.html">Suplementos Recomendados</a>
-            </div>
-            <div>
-                <h4>Legal</h4>
-                <a href="privacidade.html">Política de Privacidade</a>
-                <a href="termos.html">Termos de Uso</a>
-                <a href="aviso-afiliados.html">Aviso de Afiliados</a>
-            </div>
+            <div><h4>EnergiaVital</h4><p style="font-size:0.9rem;">Produtos e guias práticos para energia, sono, hidratação e bem-estar.</p></div>
+            <div><h4>Conteúdo</h4><a href="index.html">Início</a><a href="blog.html">Guias</a><a href="suplementos.html">Produtos Recomendados</a></div>
+            <div><h4>Legal</h4><a href="privacidade.html">Política de Privacidade</a><a href="termos.html">Termos de Uso</a></div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 EnergiaVital. Todos os direitos reservados.</p>
-            <p class="footer-disclaimer">Este site é apenas informativo e não substitui orientação médica profissional. Sempre consulte seu médico antes de iniciar qualquer suplementação. Resultados individuais podem variar.</p>
-        </div>
+        <div class="footer-bottom"><p>&copy; 2026 EnergiaVital. Todos os direitos reservados.</p><p class="footer-disclaimer">Conteúdo informativo. Suplementos não substituem orientação médica, nutricional ou profissional.</p></div>
     </footer>
-<button class="back-top" aria-label="Back to top">↑</button>
-<script>
-    // Mobile nav toggle
-    document.addEventListener('DOMContentLoaded', function() {
-        const toggle = document.querySelector('.nav-toggle');
-        const links = document.querySelector('.nav-links');
-        if (toggle && links) {
-            toggle.addEventListener('click', () => links.classList.toggle('open'));
-        }
-        
-        // Back to top
-        const btn = document.querySelector('.back-top');
-        if (btn) {
-            window.addEventListener('scroll', () => {
-                btn.classList.toggle('show', window.scrollY > 400);
-            });
-            btn.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
-        }
-        
-        // FAQ accordion
-        document.querySelectorAll('.faq-q').forEach(q => {
-            q.addEventListener('click', () => {
-                const a = q.nextElementSibling;
-                a.classList.toggle('open');
-                q.querySelector('.faq-icon').textContent = a.classList.contains('open') ? '−' : '+';
-            });
-        });
-        
-        // Search filter
-        const search = document.getElementById('searchInput');
-        if (search) {
-            search.addEventListener('input', function() {
-                const val = this.value.toLowerCase();
-                document.querySelectorAll('.article-card').forEach(card => {
-                    const text = card.textContent.toLowerCase();
-                    card.style.display = text.includes(val) ? '' : 'none';
-                });
-            });
-        }
-        
-        // Category filters
-        document.querySelectorAll('.filter-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-                const cat = this.dataset.cat;
-                document.querySelectorAll('.article-card').forEach(card => {
-                    if (cat === 'all' || card.dataset.cat === cat) {
-                        card.style.display = '';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-            });
-        });
-    });
-    </script>
-<script src="js/main.js"></script>
+    <button class="back-top" aria-label="Back to top">↑</button>
+    <script src="js/main.js"></script>
 </body>
 </html>
