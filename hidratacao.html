@@ -1,52 +1,350 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Garrafa térmica e garrafa 2L para transformar água em hábito visível.">
-<title>Hidratação | EnergiaVital</title>
-<link rel="stylesheet" href="css/ev-style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Compare garrafas para hidratação: motivacional 2L ou térmica inox. Veja qual faz mais sentido para academia, trabalho e rotina.">
+    <title>Hidratação | EnergiaVital</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        :root {
+            --bg-color: #FAFAF7;
+            --surface: #FFFFFF;
+            --primary: #2F7D5C;
+            --primary-light: #E7F4EC;
+            --secondary: #2F6F9F;
+            --accent: #D99A2B;
+            --text: #1F2933;
+            --text-muted: #64748B;
+            --border: #E5E7EB;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-color);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        .header {
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        .logo-text {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .hero {
+            background: var(--primary-light);
+            border: 2px solid var(--primary);
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 38px;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: var(--text-muted);
+        }
+
+        .intro {
+            background: var(--surface);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-size: 26px;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        p {
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .product-card {
+            background: var(--surface);
+            border: 2px solid var(--primary);
+            border-radius: 12px;
+            padding: 30px;
+            text-decoration: none;
+            display: block;
+            transition: all 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(47, 125, 92, 0.15);
+        }
+
+        .product-card h3 {
+            color: var(--primary);
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .product-card p {
+            color: var(--text-muted);
+            font-size: 15px;
+            margin-bottom: 0;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0;
+        }
+
+        ul li {
+            padding: 8px 0 8px 25px;
+            position: relative;
+        }
+
+        ul li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .footer {
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .footer-copy {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 15px;
+            }
+
+            h1 {
+                font-size: 30px;
+            }
+
+            .hero {
+                padding: 30px 20px;
+            }
+
+            .intro {
+                padding: 20px;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
 </head>
 <body>
-<header class="site-header">
-  <a class="brand" href="index.html">Energia<span>Vital</span></a>
-  <button class="nav-toggle" aria-label="Abrir menu">☰</button>
-  <nav class="nav-links" aria-label="Navegação principal">
-    <a href="index.html">Início</a>
-    <a href="suplementos.html">Suplementos</a>
-    <a href="sono-recuperacao.html">Sono</a>
-    <a href="treino-academia.html">Treino</a>
-    <a href="hidratacao.html">Hidratação</a>
-    <a href="guias.html">Guias</a>
-    <a href="sobre.html">Sobre</a>
-  </nav>
-</header>
-<main><section class="hero compact"><div><span class="eyebrow">Categoria</span><h1>Hidratação</h1><p>Hidratação fica mais simples quando o produto certo reduz atrito e deixa a água por perto.</p></div></section>
-    <section class="section answer"><h2>Comece por aqui</h2><p>Compare capacidade, vedação, facilidade de limpeza, peso, frete e prazo antes de decidir.</p></section>
-    <section class="section product-grid"><article class="product-card">
-    <img class="product-img" src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 180'><rect width='240' height='180' rx='18' fill='%23FFF7E6'/><circle cx='190' cy='42' r='31' fill='%23FFFFFF' opacity='.9'/><text x='190' y='51' dominant-baseline='middle' text-anchor='middle' font-size='31' opacity='1'>☀️</text><circle cx='72' cy='58' r='42' fill='%23FFFFFF' opacity='.45'/><text x='50%' y='48%' dominant-baseline='middle' text-anchor='middle' font-size='62'>☀️</text><text x='50%' y='142' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='15' fill='%232F7D5C'>EnergiaVital</text></svg>" alt="Garrafa de Água 2L Motivacional">
-    <span class="tag">Hidratação</span>
-    <h3>Garrafa de Água 2L Motivacional</h3>
-    <p>Opção visual para manter água por perto e transformar hidratação em hábito.</p>
-    <div class="store-buttons "><a class="btn btn-store shopee" href="https://s.shopee.com.br/5q4uevNuQD" target="_blank" rel="nofollow sponsored noopener">Ver preço na Shopee</a></div>
-    <a class="text-link" href="garrafa-termica-academia.html">Ler guia completo</a>
-  </article><article class="product-card">
-    <img class="product-img" src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 180'><rect width='240' height='180' rx='18' fill='%23FFF7E6'/><circle cx='190' cy='42' r='31' fill='%23FFFFFF' opacity='.9'/><text x='190' y='51' dominant-baseline='middle' text-anchor='middle' font-size='31' opacity='1'>☀️</text><circle cx='72' cy='58' r='42' fill='%23FFFFFF' opacity='.45'/><text x='50%' y='48%' dominant-baseline='middle' text-anchor='middle' font-size='62'>💧</text><text x='50%' y='142' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='15' fill='%232F7D5C'>EnergiaVital</text></svg>" alt="Garrafa Térmica Inox Academia">
-    <span class="tag">Hidratação</span>
-    <h3>Garrafa Térmica Inox Academia</h3>
-    <p>Compare garrafa térmica inox e garrafa motivacional para treino, trabalho e rotina.</p>
-    <div class="store-buttons "><a class="btn btn-store ml" href="https://meli.la/2UEeRmu" target="_blank" rel="nofollow sponsored noopener">Ver preço no Mercado Livre</a></div>
-    <a class="text-link" href="garrafa-termica-academia.html">Ler guia completo</a>
-  </article></section>
-    <section class="section guide-list"><h2>Veja guias relacionados</h2><a class="guide-row" href="garrafa-termica-academia.html">Garrafa térmica academia<span>→</span></a><a class="guide-row" href="acordo-cansado-mesmo-dormindo.html">Acordo cansado mesmo dormindo<span>→</span></a><a class="guide-row" href="treino-academia.html">Treino e academia<span>→</span></a></section>
-    <section class="section notice commercial-notice"><h2>Transparência comercial</h2><p>Alguns links desta página podem gerar comissão para o EnergiaVital, sem custo adicional para você. A compra é concluída diretamente no marketplace escolhido.</p></section></main>
-<footer class="site-footer">
-  <div><strong>EnergiaVital</strong><p>Curadoria para energia, sono, treino, hidratação e rotina saudável.</p></div>
-  <div class="footer-links"><a href="sobre.html">Sobre</a><a href="transparencia-comercial.html">Transparência comercial</a><a href="privacidade.html">Privacidade</a><a href="contato.html">Contato</a></div>
-</footer>
-<script>
-document.querySelector('.nav-toggle')?.addEventListener('click',()=>document.querySelector('.nav-links')?.classList.toggle('open'));
-</script>
+
+    <header class="header">
+        <div class="header-container">
+            <a href="/" class="logo">
+                <img src="logo_energia_vital.png" alt="EnergiaVital">
+                <span class="logo-text">EnergiaVital</span>
+            </a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="/">Início</a></li>
+                    <li><a href="/suplementos.html">Suplementos</a></li>
+                    <li><a href="/sono-recuperacao.html">Sono</a></li>
+                    <li><a href="/treino-academia.html">Treino</a></li>
+                    <li><a href="/hidratacao.html">Hidratação</a></li>
+                    <li><a href="/guias.html">Guias</a></li>
+                    <li><a href="/sobre.html">Sobre</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <div class="hero">
+            <h1>Hidratação</h1>
+            <p class="subtitle">Compare garrafas para hidratação e escolha com base em volume, temperatura e praticidade para sua rotina.</p>
+        </div>
+
+        <div class="intro">
+            <h2>Beber água é simples, mas muita gente falha</h2>
+            <p>Hidratação adequada parece óbvio, mas muita gente não bebe água suficiente por falta de rotina, esquecimento ou praticidade.</p>
+            <p>Ter uma garrafa visível, compatível com sua rotina e prática de usar pode facilitar o hábito.</p>
+        </div>
+
+        <div class="products-grid">
+            <a href="/garrafa-termica-academia.html" class="product-card">
+                <h3>Garrafa Motivacional 2L + Garrafa Térmica</h3>
+                <p>Compare as duas opções: volume e marcação visual vs temperatura controlada. Veja qual faz mais sentido para academia, trabalho e transporte.</p>
+            </a>
+        </div>
+
+        <div class="intro">
+            <h2>Por que a garrafa certa ajuda</h2>
+            <ul>
+                <li><strong>Facilidade:</strong> garrafa sempre à mão lembra de beber</li>
+                <li><strong>Volume adequado:</strong> evita recargas constantes ou carregar peso desnecessário</li>
+                <li><strong>Temperatura:</strong> água gelada pode incentivar consumo, especialmente em treinos</li>
+                <li><strong>Visibilidade:</strong> garrafa à vista serve como lembrete visual</li>
+                <li><strong>Praticidade:</strong> caber na bolsa, no porta-copo, na mochila</li>
+            </ul>
+        </div>
+
+        <div class="intro">
+            <h2>Motivacional 2L ou térmica?</h2>
+            <p><strong>Garrafa motivacional 2L:</strong> volume grande, marcações de horário, lembretes visuais. Boa para quem quer levar água para o dia todo e evitar recargas. Ponto de atenção: volume grande = mais peso e espaço.</p>
+            <p><strong>Garrafa térmica inox:</strong> mantém temperatura por horas, mais compacta e discreta. Boa para quem valoriza água gelada e portabilidade. Ponto de atenção: volume menor = recargas mais frequentes.</p>
+            <p>A escolha depende do que você prioriza: volume vs temperatura, praticidade vs portabilidade.</p>
+        </div>
+
+        <div class="intro">
+            <h2>Sinais de desidratação</h2>
+            <ul>
+                <li>Sede (já é sinal de desidratação leve)</li>
+                <li>Urina escura ou com odor forte</li>
+                <li>Boca seca, lábios rachados</li>
+                <li>Dor de cabeça</li>
+                <li>Fadiga, cansaço</li>
+                <li>Tontura ao levantar</li>
+                <li>Redução do desempenho físico e mental</li>
+            </ul>
+            <p>Se você sente sede com frequência, sua urina é escura ou você tem sintomas persistentes, beba mais água ao longo do dia.</p>
+        </div>
+
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="/sobre.html">Sobre</a>
+                <a href="/privacidade.html">Privacidade</a>
+                <a href="/contato.html">Contato</a>
+            </div>
+            <div class="footer-copy">
+                © 2026 EnergiaVital. Conteúdo informativo e educacional.
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>
