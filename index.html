@@ -1,39 +1,459 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Curadoria prática de suplementos, acessórios e itens de autocuidado para comparar produtos e comprar com menos impulso.">
-<title>EnergiaVital | Energia, sono e rotina com escolhas mais claras</title>
-<link rel="stylesheet" href="css/ev-style.css">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","name":"EnergiaVital","url":"https://energiavital-site.pages.dev/"},{"@type":"Organization","name":"EnergiaVital","url":"https://energiavital-site.pages.dev/"}]}</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Guias práticos sobre suplementos, sono, treino e hidratação para ajudar você a comparar produtos com mais clareza antes de comprar.">
+    <title>EnergiaVital - Energia, sono e rotina com escolhas mais claras</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-color: #FAFAF7;
+            --surface: #FFFFFF;
+            --primary: #2F7D5C;
+            --primary-light: #E7F4EC;
+            --secondary: #2F6F9F;
+            --accent: #D99A2B;
+            --text: #1F2933;
+            --text-muted: #64748B;
+            --border: #E5E7EB;
+            --warning: #FFF7E6;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-color);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        .header {
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        .logo-text {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, #267052 100%);
+            color: white;
+            border-radius: 16px;
+            padding: 60px 40px;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 35px;
+            opacity: 0.95;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.3s;
+            font-size: 16px;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .section-title {
+            font-size: 32px;
+            color: var(--primary);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .featured-product {
+            background: var(--primary-light);
+            border: 3px solid var(--primary);
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 50px;
+        }
+
+        .featured-product h2 {
+            color: var(--primary);
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .featured-product p {
+            font-size: 18px;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .featured-product .btn {
+            background: var(--primary);
+            color: white;
+        }
+
+        .featured-product .btn:hover {
+            background: #267052;
+            transform: translateY(-2px);
+        }
+
+        .pain-hub {
+            background: var(--accent);
+            color: white;
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .pain-hub h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .pain-hub p {
+            font-size: 18px;
+            margin-bottom: 25px;
+            opacity: 0.95;
+        }
+
+        .pain-hub .btn {
+            background: white;
+            color: var(--accent);
+        }
+
+        .pain-hub .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+        }
+
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .category-card {
+            background: var(--surface);
+            border: 2px solid var(--primary);
+            border-radius: 12px;
+            padding: 30px;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: block;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(47, 125, 92, 0.15);
+        }
+
+        .category-card h3 {
+            color: var(--primary);
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+
+        .category-card p {
+            color: var(--text-muted);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .editorial-section {
+            background: var(--primary-light);
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .editorial-section h2 {
+            color: var(--primary);
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .editorial-section p {
+            font-size: 17px;
+            color: var(--text);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .footer {
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .footer-copy {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 15px;
+            }
+
+            .hero {
+                padding: 40px 25px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .section-title {
+                font-size: 26px;
+            }
+
+            .featured-product, .pain-hub, .editorial-section {
+                padding: 25px 20px;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+
+            .categories {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
 </head>
 <body>
-<header class="site-header">
-  <a class="brand" href="index.html">Energia<span>Vital</span></a>
-  <button class="nav-toggle" aria-label="Abrir menu">☰</button>
-  <nav class="nav-links" aria-label="Navegação principal">
-    <a href="index.html">Início</a>
-    <a href="suplementos.html">Suplementos</a>
-    <a href="sono-recuperacao.html">Sono</a>
-    <a href="treino-academia.html">Treino</a>
-    <a href="hidratacao.html">Hidratação</a>
-    <a href="guias.html">Guias</a>
-    <a href="sobre.html">Sobre</a>
-  </nav>
-</header>
-<main><section class="hero"><div><span class="eyebrow">Curadoria independente</span><h1>Energia, sono e rotina com escolhas mais claras.</h1><p>Curadoria prática de suplementos, acessórios e itens de autocuidado para quem quer comparar produtos, entender pontos de atenção e comprar com menos impulso.</p><div class="hero-actions"><a class="btn primary" href="suplementos.html">Ver recomendações</a><a class="btn secondary" href="sono-recuperacao.html">Começar por sono e energia</a></div></div><img class="product-img" src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 180'><rect width='240' height='180' rx='18' fill='%23FFF7E6'/><circle cx='190' cy='42' r='31' fill='%23FFFFFF' opacity='.9'/><text x='190' y='51' dominant-baseline='middle' text-anchor='middle' font-size='31' opacity='1'>☀️</text><circle cx='72' cy='58' r='42' fill='%23FFFFFF' opacity='.45'/><text x='50%' y='48%' dominant-baseline='middle' text-anchor='middle' font-size='62'>🌿</text><text x='50%' y='142' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='15' fill='%232F7D5C'>EnergiaVital</text></svg>" alt="Curadoria EnergiaVital para rotina saudável"></section>
-    <section class="section answer"><h2>Decisões melhores começam antes do clique.</h2><p>O EnergiaVital reúne guias de compra sobre suplementos, sono, treino, hidratação e rotina para ajudar você a comparar produtos com mais clareza antes de comprar.</p></section>
-    <section class="section category-grid"><a class="category-card" href="suplementos.html"><h2>Suplementos</h2><p>Creatina, magnésio e CoQ10 para comparar com calma.</p></a><a class="category-card" href="sono-recuperacao.html"><h2>Sono e recuperação</h2><p>Conforto, rotina noturna e escolhas sem promessa exagerada.</p></a><a class="category-card" href="treino-academia.html"><h2>Treino e academia</h2><p>Produtos para quem quer voltar ao ritmo com constância.</p></a><a class="category-card" href="hidratacao.html"><h2>Hidratação</h2><p>Garrafas e hábitos visíveis para o dia a dia.</p></a></section>
-    <section class="section"><h2>Primeiros guias</h2><div class="link-grid"><a href="creatina-soldiers-vale-a-pena.html" class="guide-card"><h3>Creatina Soldiers vale a pena?</h3><span>Ver guia →</span></a><a href="acordo-cansado-mesmo-dormindo.html" class="guide-card"><h3>Acordo cansado mesmo dormindo</h3><span>Ver guia →</span></a><a href="trio-magnesio-ocean-drop.html" class="guide-card"><h3>Trio Magnésio Ocean Drop</h3><span>Ver guia →</span></a><a href="coenzima-q10-vitafor.html" class="guide-card"><h3>Coenzima Q10 Vitafor</h3><span>Ver guia →</span></a><a href="travesseiro-cervical-fibrasca.html" class="guide-card"><h3>Travesseiro Cervical Fibrasca</h3><span>Ver guia →</span></a><a href="garrafa-termica-academia.html" class="guide-card"><h3>Garrafa térmica academia</h3><span>Ver guia →</span></a></div></section>
-    <section class="section trust"><h2>Curadoria independente para comprar com mais segurança.</h2><p>Você compara produtos, entende os pontos de atenção e conclui a compra diretamente no marketplace de sua preferência.</p><p><small>Alguns links podem gerar comissão comercial para o EnergiaVital, sem custo adicional para você.</small></p></section>
-    <section class="section notice commercial-notice"><h2>Transparência comercial</h2><p>Alguns links desta página podem gerar comissão para o EnergiaVital, sem custo adicional para você. A compra é concluída diretamente no marketplace escolhido.</p></section></main>
-<footer class="site-footer">
-  <div><strong>EnergiaVital</strong><p>Curadoria para energia, sono, treino, hidratação e rotina saudável.</p></div>
-  <div class="footer-links"><a href="sobre.html">Sobre</a><a href="transparencia-comercial.html">Transparência comercial</a><a href="privacidade.html">Privacidade</a><a href="contato.html">Contato</a></div>
-</footer>
-<script>
-document.querySelector('.nav-toggle')?.addEventListener('click',()=>document.querySelector('.nav-links')?.classList.toggle('open'));
-</script>
+
+    <header class="header">
+        <div class="header-container">
+            <a href="/" class="logo">
+                <img src="logo_energia_vital.png" alt="EnergiaVital">
+                <span class="logo-text">EnergiaVital</span>
+            </a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="/">Início</a></li>
+                    <li><a href="/suplementos.html">Suplementos</a></li>
+                    <li><a href="/sono-recuperacao.html">Sono</a></li>
+                    <li><a href="/treino-academia.html">Treino</a></li>
+                    <li><a href="/hidratacao.html">Hidratação</a></li>
+                    <li><a href="/guias.html">Guias</a></li>
+                    <li><a href="/sobre.html">Sobre</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- HERO -->
+        <div class="hero">
+            <h1>Energia, sono e rotina com escolhas mais claras</h1>
+            <p>Guias práticos sobre suplementos, sono, treino e hidratação para ajudar você a comparar produtos com mais clareza antes de comprar.</p>
+            <div class="hero-buttons">
+                <a href="/guias.html" class="btn btn-primary">Ver guias</a>
+                <a href="/suplementos.html" class="btn btn-secondary">Começar por suplementos</a>
+            </div>
+        </div>
+
+        <!-- PRODUTO EM DESTAQUE -->
+        <div class="featured-product">
+            <h2>Produto em destaque: Creatina Soldiers</h2>
+            <p>Entenda o que é creatina, por que atletas e praticantes de treino usam, quais benefícios são associados ao uso correto e o que observar antes de comprar a Creatina Monohidratada Soldiers Nutrition 500g.</p>
+            <a href="/creatina-soldiers-vale-a-pena.html" class="btn">Ver guia completo</a>
+        </div>
+
+        <!-- HUB DE DOR AMPLA -->
+        <div class="pain-hub">
+            <h2>Acorda cansado mesmo dormindo?</h2>
+            <p>Veja fatores que podem influenciar o cansaço ao acordar: sono, hidratação, alimentação, telas, travesseiro e rotina de treino.</p>
+            <a href="/acordo-cansado-mesmo-dormindo.html" class="btn">Entender melhor</a>
+        </div>
+
+        <!-- CATEGORIAS -->
+        <h2 class="section-title">Navegue por categoria</h2>
+        <div class="categories">
+            <a href="/suplementos.html" class="category-card">
+                <h3>Suplementos</h3>
+                <p>Compare creatina, magnésio e coenzima Q10. Entenda o que cada um faz e quando podem fazer sentido na rotina.</p>
+            </a>
+
+            <a href="/sono-recuperacao.html" class="category-card">
+                <h3>Sono e Recuperação</h3>
+                <p>Explore fatores que influenciam qualidade de sono: rotina, ambiente, travesseiro, luz e telas.</p>
+            </a>
+
+            <a href="/treino-academia.html" class="category-card">
+                <h3>Treino e Academia</h3>
+                <p>Veja como creatina, hidratação e consistência se encaixam em uma rotina de treino.</p>
+            </a>
+
+            <a href="/hidratacao.html" class="category-card">
+                <h3>Hidratação</h3>
+                <p>Compare garrafa motivacional 2L e garrafa térmica. Escolha com base em volume, temperatura e praticidade.</p>
+            </a>
+        </div>
+
+        <!-- EDITORIAL -->
+        <div class="editorial-section">
+            <h2>Decisões melhores começam antes do clique</h2>
+            <p>O EnergiaVital organiza conteúdos práticos para quem quer entender melhor antes de comprar. A compra acontece diretamente nos marketplaces.</p>
+        </div>
+
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="/sobre.html">Sobre</a>
+                <a href="/privacidade.html">Privacidade</a>
+                <a href="/contato.html">Contato</a>
+            </div>
+            <div class="footer-copy">
+                © 2026 EnergiaVital. Conteúdo informativo e educacional.
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>
