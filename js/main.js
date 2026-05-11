@@ -272,12 +272,12 @@
     };
 
     // ============================================
-    // 6. TRACKING DE CLIQUES EM AFILIADOS
+    // 6. TRACKING DE CLIQUES EM Parceiros comerciais
     // ============================================
-    const trackAffiliateClick = (productName) => {
+    const trackcommercialClick = (productName) => {
         // Aqui você integraria com Google Analytics ou seu sistema de tracking
         if (typeof gtag !== 'undefined') {
-            gtag('event', 'affiliate_click', {
+            gtag('event', 'commercial_click', {
                 'product_name': productName,
                 'event_category': 'engagement',
                 'event_label': productName
@@ -287,11 +287,11 @@
         console.log('Clique rastreado:', productName);
     };
 
-    // Adicionar tracking a todos os links de afiliados
-    const initAffiliateTracking = () => {
+    // Adicionar tracking a todos os links de Parceiros comerciais
+    const initcommercialTracking = () => {
         document.querySelectorAll('a[data-product]').forEach(link => {
             link.addEventListener('click', (e) => {
-                trackAffiliateClick(link.dataset.product);
+                trackcommercialClick(link.dataset.product);
             });
         });
     };
@@ -384,7 +384,7 @@
         initExitPopup();
         initQuiz();
         initCalculator();
-        initAffiliateTracking();
+        initcommercialTracking();
         initArticleSearch();
         initCategoryFilters();
         initFAQ();

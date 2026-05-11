@@ -247,7 +247,7 @@ git push
 
 ## 🔧 Configurações Pós-Deploy
 
-### 1. Substituir Links de Afiliados
+### 1. Substituir Links de Parceiros comerciais
 
 **CRÍTICO:** Trocar todos `XXXXXX` nos arquivos HTML:
 
@@ -256,7 +256,7 @@ git push
 href="https://www.amazon.com.br/dp/XXXXXX?tag=energiavital-20"
 
 <!-- DEPOIS -->
-href="https://www.amazon.com.br/dp/B08K7F3Q5L?tag=seuidafiliado-20"
+href="https://www.amazon.com.br/dp/B08K7F3Q5L?tag=seuidcomercial-20"
 ```
 
 **Onde encontrar:**
@@ -295,7 +295,7 @@ Se não tiver imagens, o código usa placeholders SVG automaticamente.
 Antes de divulgar o site:
 
 - [ ] Site está online e acessível
-- [ ] Todos os links de afiliados estão corretos
+- [ ] Todos os links de Parceiros comerciais estão corretos
 - [ ] Google Analytics está configurado
 - [ ] Imagens foram adicionadas (ou placeholders funcionam)
 - [ ] Quiz funciona (testar no site)
@@ -336,7 +336,7 @@ git config --global user.email "seu@email.com"
 - Build command deve estar vazio
 - Output directory deve ser `/`
 
-### "Links de afiliado não funcionam"
+### "Links de Parceiro comercial não funcionam"
 **Solução:** Verificar se há espaços ou quebras de linha no href:
 ```html
 <!-- ❌ ERRADO -->
@@ -386,6 +386,6 @@ git config --global user.email "seu@email.com"
 
 ---
 
-**🎉 Parabéns! Seu site está pronto para gerar comissões!**
+**🎉 Parabéns! Seu site está pronto para gerar receitas
 
 Agora é só divulgar e acompanhar os resultados. 🚀

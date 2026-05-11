@@ -1,6 +1,6 @@
 # 🚀 EnergiaVital - Site Otimizado para Conversão
 
-Site de afiliados Amazon otimizado com todas as melhores práticas de conversão implementadas.
+Site de Parceiros comerciais Amazon otimizado com todas as melhores práticas de conversão implementadas.
 
 ## ✨ Melhorias Implementadas
 
@@ -66,7 +66,7 @@ energiavital-otimizado/
 ├── artigo-*.html              # (copiar do original)
 ├── privacidade.html           # (copiar do original)
 ├── termos.html                # (copiar do original)
-├── aviso-afiliados.html       # (copiar do original)
+├── aviso-Parceiros comerciais.html       # (copiar do original)
 ├── css/
 │   └── style.css              # CSS otimizado unificado
 ├── js/
@@ -84,7 +84,7 @@ energiavital-otimizado/
 
 ## 🔧 Configuração Necessária
 
-### 1. Substituir Links de Afiliados Amazon
+### 1. Substituir Links de Parceiros comerciais Amazon
 
 **IMPORTANTE:** Trocar todos os placeholders `XXXXXX` pelos seus links reais:
 
@@ -93,7 +93,7 @@ energiavital-otimizado/
 href="https://www.amazon.com.br/dp/XXXXXX?tag=energiavital-20"
 
 <!-- DEPOIS (exemplo) -->
-href="https://www.amazon.com.br/dp/B08K7F3Q5L?tag=seuidafiliado-20"
+href="https://www.amazon.com.br/dp/B08K7F3Q5L?tag=seuidcomercial-20"
 ```
 
 ### 2. Adicionar Google Analytics
@@ -179,14 +179,14 @@ No Cloudflare Pages:
 
 O arquivo `js/main.js` já rastreia automaticamente:
 
-- ✅ Cliques em links de afiliados (por produto)
+- ✅ Cliques em links de Parceiros comerciais (por produto)
 - ✅ Conclusão do quiz
 - ✅ Submissão da calculadora
 - ✅ Captura de email no popup
 
 **Eventos disponíveis no GA:**
 ```
-affiliate_click
+commercial_click
   └─ product_name: "magnesio-glicinato", "complexo-b", etc.
 
 quiz_completed
@@ -228,12 +228,12 @@ email_captured
 **Após Otimizações (30-60 dias):**
 - Taxa de conversão projetada: 4.5-7% (+125% a +250%)
 - CTR em botões CTA: 22-35% (+120% a +250%)
-- Aumento em comissões: 2.5x a 3.8x
+- Aumento em receitas 2.5x a 3.8x
 
 **Assumindo:**
 - 5.000 visitas/mês
 - Ticket médio R$ 70
-- Comissão Amazon 8%
+- receitas Amazon 8%
 - **Potencial: R$ 800-2.500/mês**
 
 ## 📝 Checklist Pré-Lançamento
@@ -269,7 +269,7 @@ email_captured
 
 ## 📈 Próximos Passos Recomendados
 
-1. **Semana 1:** Deploy básico + substituir links de afiliados
+1. **Semana 1:** Deploy básico + substituir links de Parceiros comerciais
 2. **Semana 2:** Adicionar imagens reais + testar conversão
 3. **Semana 3:** Implementar email marketing (Mailchimp)
 4. **Semana 4:** Criar conteúdo SEO (3-5 artigos novos)
@@ -280,14 +280,14 @@ email_captured
 
 - 10.000 visitas/mês
 - Taxa de conversão 5%+
-- R$ 1.500-3.000/mês em comissões
+- R$ 1.500-3.000/mês em receitas
 
 **Boa sorte! 🚀**
 
 ---
 
 **Desenvolvido com otimizações baseadas em:**
-- Testes A/B de +100 sites de afiliados
+- Testes A/B de +100 sites de Parceiros comerciais
 - Estudos de psicologia da conversão
 - Best practices de UX/UI 2026
 - Diretrizes oficiais Amazon Associates
