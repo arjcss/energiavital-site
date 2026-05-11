@@ -1,41 +1,693 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Compare opções para hidratação, treino, trabalho e rotina diária antes de decidir.">
-<title>Garrafa térmica para academia: como escolher antes de comprar | EnergiaVital</title>
-<link rel="stylesheet" href="css/ev-style.css">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Qual escolher: 2L ou térmica inox?","acceptedAnswer":{"@type":"Answer","text":"A de 2L ajuda quem gosta de meta visual. A térmica inox faz sentido para quem quer água por perto com melhor conservação de temperatura."}},{"@type":"Question","name":"Garrafa resolve hidratação?","acceptedAnswer":{"@type":"Answer","text":"Não. Ela facilita o hábito, mas a rotina depende do uso diário."}},{"@type":"Question","name":"O que observar antes de comprar?","acceptedAnswer":{"@type":"Answer","text":"Capacidade, material, vedação, limpeza, frete, vendedor e prazo."}},{"@type":"Question","name":"O EnergiaVital vende garrafas?","acceptedAnswer":{"@type":"Answer","text":"Não. A compra acontece no marketplace escolhido."}},{"@type":"Question","name":"Posso usar no trabalho?","acceptedAnswer":{"@type":"Answer","text":"Sim, desde que o tamanho e o formato combinem com sua rotina."}}]}</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Compare garrafa motivacional 2L e garrafa térmica inox para academia, trabalho e rotina de hidratação antes de comprar.">
+    <title>Garrafa para academia: motivacional ou térmica? Veja antes de comprar | EnergiaVital</title>
+    
+    <!-- JSON-LD FAQ Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Garrafa de 2L é boa para rotina?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pode ser, se você prefere levar água para o dia todo e evitar recargas frequentes. Mas também é mais volumosa e pesada. Avalie se o tamanho combina com sua rotina de treino, trabalho e transporte."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Garrafa térmica é melhor que garrafa motivacional?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Não necessariamente. Depende do que você prioriza: volume e marcação visual ou temperatura controlada. Cada uma tem vantagens diferentes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Qual faz mais sentido para academia?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Depende. Garrafa motivacional 2L pode ser prática para quem treina longamente e quer evitar idas ao bebedouro. Garrafa térmica faz sentido para quem quer água gelada durante o treino."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Qual faz mais sentido para trabalho?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Garrafa térmica tende a ser mais discreta e mantém temperatura. Garrafa motivacional 2L pode ser grande demais para mesa de trabalho, mas útil para quem trabalha em pé ou em movimento."
+          }
+        }
+      ]
+    }
+    </script>
+    
+    <!-- JSON-LD Breadcrumb -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Início",
+          "item": "https://energiavital-site.pages.dev/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Hidratação",
+          "item": "https://energiavital-site.pages.dev/hidratacao"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Garrafa para academia",
+          "item": "https://energiavital-site.pages.dev/garrafa-termica-academia"
+        }
+      ]
+    }
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-color: #FAFAF7;
+            --surface: #FFFFFF;
+            --primary: #2F7D5C;
+            --primary-light: #E7F4EC;
+            --secondary: #2F6F9F;
+            --accent: #D99A2B;
+            --text: #1F2933;
+            --text-muted: #64748B;
+            --border: #E5E7EB;
+            --warning: #FFF7E6;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-color);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        .header {
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .hero {
+            background: var(--primary-light);
+            border: 2px solid var(--primary);
+            border-radius: 12px;
+            padding: 40px 35px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 38px;
+            color: var(--primary);
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: var(--text-muted);
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .quick-summary {
+            background: var(--accent);
+            color: white;
+            padding: 25px 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            border: 3px solid #C88A25;
+        }
+
+        .quick-summary p {
+            font-size: 17px;
+            line-height: 1.7;
+            margin-bottom: 0;
+        }
+
+        .section {
+            background: var(--surface);
+            border-radius: 12px;
+            padding: 35px;
+            margin-bottom: 25px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            font-size: 28px;
+            color: var(--primary);
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--primary-light);
+        }
+
+        h3 {
+            font-size: 22px;
+            color: var(--text);
+            margin: 30px 0 15px 0;
+        }
+
+        p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .opening-text {
+            background: var(--primary-light);
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 5px solid var(--primary);
+            margin-bottom: 30px;
+        }
+
+        .opening-text p {
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .product-block {
+            background: var(--surface);
+            border: 3px solid var(--primary);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .product-block h3 {
+            color: var(--primary);
+            margin-top: 0;
+            font-size: 26px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 16px 28px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.3s;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        .btn-shopee {
+            background: #EE4D2D;
+            color: white;
+        }
+
+        .btn-shopee:hover {
+            background: #D43E1F;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(238, 77, 45, 0.3);
+        }
+
+        .btn-mercadolivre {
+            background: #FFE600;
+            color: #333;
+        }
+
+        .btn-mercadolivre:hover {
+            background: #F0D900;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(255, 230, 0, 0.3);
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        ul li {
+            padding: 10px 0 10px 30px;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        ul li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .comparison-table {
+            background: var(--primary-light);
+            border-radius: 10px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+
+        .comparison-table h3 {
+            color: var(--primary);
+            margin-top: 0;
+        }
+
+        .faq-accordion {
+            margin-top: 20px;
+        }
+
+        .faq-item {
+            background: var(--primary-light);
+            border-radius: 10px;
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            background: var(--primary);
+            color: white;
+            padding: 18px 25px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 17px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s;
+        }
+
+        .faq-question:hover {
+            background: #267052;
+        }
+
+        .faq-question::after {
+            content: "+";
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .faq-question.active::after {
+            content: "−";
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 25px;
+        }
+
+        .faq-answer.show {
+            max-height: 500px;
+            padding: 20px 25px;
+        }
+
+        .faq-answer p {
+            margin: 0;
+        }
+
+        .disclaimer {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .disclaimer strong {
+            color: var(--text);
+            display: block;
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+
+        .footer {
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+            padding: 40px 20px;
+            margin-top: 50px;
+        }
+
+        .footer-container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .footer-copy {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 15px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .hero {
+                padding: 25px 20px;
+            }
+
+            .section {
+                padding: 25px 20px;
+            }
+
+            .product-block {
+                padding: 20px;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
 </head>
 <body>
-<header class="site-header">
-  <a class="brand" href="index.html">Energia<span>Vital</span></a>
-  <button class="nav-toggle" aria-label="Abrir menu">☰</button>
-  <nav class="nav-links" aria-label="Navegação principal">
-    <a href="index.html">Início</a>
-    <a href="suplementos.html">Suplementos</a>
-    <a href="sono-recuperacao.html">Sono</a>
-    <a href="treino-academia.html">Treino</a>
-    <a href="hidratacao.html">Hidratação</a>
-    <a href="guias.html">Guias</a>
-    <a href="sobre.html">Sobre</a>
-  </nav>
-</header>
-<main><section class="hero compact"><div><span class="eyebrow">Hidratação</span><h1>Garrafa térmica para academia: como escolher antes de comprar</h1><p>Compare opções para hidratação, treino, trabalho e rotina diária antes de decidir.</p></div><img class="product-img" src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 180'><rect width='240' height='180' rx='18' fill='%23FFF7E6'/><circle cx='190' cy='42' r='31' fill='%23FFFFFF' opacity='.9'/><text x='190' y='51' dominant-baseline='middle' text-anchor='middle' font-size='31' opacity='1'>☀️</text><circle cx='72' cy='58' r='42' fill='%23FFFFFF' opacity='.45'/><text x='50%' y='48%' dominant-baseline='middle' text-anchor='middle' font-size='62'>💧</text><text x='50%' y='142' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='15' fill='%232F7D5C'>EnergiaVital</text></svg>" alt="Garrafas para hidratação"></section>
-    <section class="section answer"><h2>Resposta rápida</h2><p>Uma garrafa pode ajudar quando torna a água mais visível e fácil de carregar. A melhor escolha depende de capacidade, material, vedação, facilidade de limpeza, peso e rotina de uso.</p></section>
-    <section class="section grid-2"><div class="panel"><h2>Garrafa motivacional 2L</h2><p>Faz sentido para quem gosta de meta visual, trabalha muitas horas sentado ou prefere acompanhar volume ao longo do dia.</p><div class="store-buttons "><a class="btn btn-store shopee" href="https://s.shopee.com.br/5q4uevNuQD" target="_blank" rel="nofollow sponsored noopener">Ver preço na Shopee</a></div></div><div class="panel"><h2>Garrafa térmica inox</h2><p>Faz sentido para academia, trabalho e deslocamentos quando você quer uma opção mais discreta e resistente.</p><div class="store-buttons "><a class="btn btn-store ml" href="https://meli.la/2UEeRmu" target="_blank" rel="nofollow sponsored noopener">Ver preço no Mercado Livre</a></div></div></section>
-    <section class="section grid-2"><div class="panel"><h2>Pontos positivos</h2><ul><li>Facilitam o hábito de beber água.</li><li>Ajudam a manter água por perto no treino e trabalho.</li><li>São produtos simples de comparar.</li></ul></div><div class="panel warning"><h2>Pontos de atenção</h2><ul><li>Confira capacidade real.</li><li>Verifique vedação e facilidade de limpeza.</li><li>Compare frete, prazo e avaliações recentes.</li><li>Observe material e peso para transporte.</li></ul></div></section>
-    <section class="section buy-box"><h2>Onde comprar</h2><div class="product-grid"><article class="product-card marketplace-card"><span class="tag">Marketplace</span><h3>Shopee</h3><p>Boa opção para a garrafa de água 2L motivacional.</p><a class="btn btn-store shopee" href="https://s.shopee.com.br/5q4uevNuQD" target="_blank" rel="nofollow sponsored noopener">Ver preço na Shopee</a></article><article class="product-card marketplace-card"><span class="tag">Marketplace</span><h3>Mercado Livre</h3><p>Boa opção para a garrafa térmica inox academia.</p><a class="btn btn-store ml" href="https://meli.la/2UEeRmu" target="_blank" rel="nofollow sponsored noopener">Ver preço no Mercado Livre</a></article></div></section>
-    <section class="section faq"><h2>Perguntas frequentes</h2><details><summary>Qual escolher: 2L ou térmica inox?</summary><p>A de 2L ajuda quem gosta de meta visual. A térmica inox faz sentido para quem quer água por perto com melhor conservação de temperatura.</p></details><details><summary>Garrafa resolve hidratação?</summary><p>Não. Ela facilita o hábito, mas a rotina depende do uso diário.</p></details><details><summary>O que observar antes de comprar?</summary><p>Capacidade, material, vedação, limpeza, frete, vendedor e prazo.</p></details><details><summary>O EnergiaVital vende garrafas?</summary><p>Não. A compra acontece no marketplace escolhido.</p></details><details><summary>Posso usar no trabalho?</summary><p>Sim, desde que o tamanho e o formato combinem com sua rotina.</p></details></section>
-    <section class="section notice commercial-notice"><h2>Transparência comercial</h2><p>Alguns links desta página podem gerar comissão para o EnergiaVital, sem custo adicional para você. A compra é concluída diretamente no marketplace escolhido.</p></section>
-    <section class="section related"><h2>Veja também</h2><div class="pill-row"><a class="pill" href="hidratacao.html">Hidratação</a><a class="pill" href="treino-academia.html">Treino e academia</a><a class="pill" href="acordo-cansado-mesmo-dormindo.html">Acordo cansado mesmo dormindo?</a><a class="pill" href="guias.html">Outros guias</a></div></section></main>
-<footer class="site-footer">
-  <div><strong>EnergiaVital</strong><p>Curadoria para energia, sono, treino, hidratação e rotina saudável.</p></div>
-  <div class="footer-links"><a href="sobre.html">Sobre</a><a href="transparencia-comercial.html">Transparência comercial</a><a href="privacidade.html">Privacidade</a><a href="contato.html">Contato</a></div>
-</footer>
-<script>
-document.querySelector('.nav-toggle')?.addEventListener('click',()=>document.querySelector('.nav-links')?.classList.toggle('open'));
-</script>
+
+    <header class="header">
+        <div class="header-container">
+            <a href="/" class="logo">EnergiaVital</a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="/">Início</a></li>
+                    <li><a href="/suplementos">Suplementos</a></li>
+                    <li><a href="/sono">Sono</a></li>
+                    <li><a href="/treino">Treino</a></li>
+                    <li><a href="/hidratacao">Hidratação</a></li>
+                    <li><a href="/guias">Guias</a></li>
+                    <li><a href="/sobre">Sobre</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <div class="hero">
+            <h1>Garrafa para academia: como escolher antes de comprar</h1>
+            <p class="subtitle">Compare garrafa motivacional 2L e garrafa térmica inox. Veja qual faz mais sentido para academia, trabalho e rotina de hidratação.</p>
+        </div>
+
+        <div class="quick-summary">
+            <p><strong>Resumo rápido:</strong> beber água suficiente parece simples, mas muita gente falha por falta de rotina. Ter uma garrafa visível, prática e compatível com o dia a dia pode facilitar o hábito. A escolha entre garrafa motivacional e garrafa térmica depende do seu objetivo: volume, temperatura, praticidade, transporte e uso em treino ou trabalho.</p>
+        </div>
+
+        <div class="opening-text">
+            <p><strong>Beber água suficiente parece simples, mas muita gente falha por falta de rotina.</strong> Ter uma garrafa visível, prática e compatível com o dia a dia pode facilitar o hábito.</p>
+            
+            <p style="margin-top: 15px;">A escolha entre garrafa motivacional e garrafa térmica depende do seu objetivo: volume, temperatura, praticidade, transporte e uso em treino ou trabalho.</p>
+        </div>
+
+        <div class="section">
+            <h2>Por que a garrafa certa ajuda na rotina</h2>
+            
+            <p>Hidratação não depende apenas de "lembrar de beber água". Depende de:</p>
+            <ul>
+                <li><strong>Facilidade:</strong> garrafa sempre à mão</li>
+                <li><strong>Volume adequado:</strong> evitar recargas constantes ou carregar peso desnecessário</li>
+                <li><strong>Temperatura:</strong> água gelada pode incentivar consumo, especialmente em treinos</li>
+                <li><strong>Visibilidade:</strong> garrafa à vista lembra de beber</li>
+                <li><strong>Praticidade:</strong> caber na bolsa, no porta-copo, na mochila</li>
+            </ul>
+            
+            <p>Uma garrafa que não combina com sua rotina acaba esquecida. A escolha certa torna o hábito mais fácil.</p>
+        </div>
+
+        <div class="product-block">
+            <h3>Garrafa de Água 2L Motivacional</h3>
+            <p>Garrafa grande com marcações de horário e frases motivacionais. Ideal para quem quer levar água para o dia todo e ter lembretes visuais de consumo.</p>
+            
+            <p><strong>Para quem pode fazer sentido:</strong></p>
+            <ul>
+                <li>Quem treina por períodos longos e quer evitar idas ao bebedouro</li>
+                <li>Quem trabalha em pé ou em movimento e quer água para o dia todo</li>
+                <li>Quem precisa de lembretes visuais para manter consumo regular</li>
+                <li>Quem prefere evitar recargas frequentes</li>
+                <li>Quem quer acompanhar consumo ao longo do dia</li>
+            </ul>
+            
+            <p><strong>Pontos de atenção:</strong></p>
+            <ul>
+                <li>Volume grande = mais peso para carregar</li>
+                <li>Pode não caber em todos os porta-copos ou mochilas</li>
+                <li>Não mantém temperatura (água fica em temperatura ambiente)</li>
+                <li>Pode ser grande demais para uso discreto no trabalho</li>
+            </ul>
+            
+            <a href="https://s.shopee.com.br/5q4uevNuQD" class="btn btn-shopee" target="_blank" rel="nofollow sponsored noopener">Ver preço na Shopee</a>
+        </div>
+
+        <div class="product-block">
+            <h3>Garrafa Térmica Inox Academia</h3>
+            <p>Garrafa térmica em inox que mantém temperatura por horas. Ideal para quem prioriza água gelada durante treino ou trabalho.</p>
+            
+            <p><strong>Para quem pode fazer sentido:</strong></p>
+            <ul>
+                <li>Quem quer água gelada durante todo o treino</li>
+                <li>Quem trabalha em ambiente quente ou externo</li>
+                <li>Quem prefere garrafa mais discreta e compacta</li>
+                <li>Quem valoriza temperatura controlada</li>
+                <li>Quem precisa de garrafa que caiba em porta-copo padrão</li>
+            </ul>
+            
+            <p><strong>Pontos de atenção:</strong></p>
+            <ul>
+                <li>Volume menor = recargas mais frequentes</li>
+                <li>Inox pode ser mais pesado que plástico (vazio)</li>
+                <li>Não tem marcações de consumo</li>
+                <li>Precisa de limpeza mais cuidadosa para evitar odores</li>
+            </ul>
+            
+            <a href="https://meli.la/2UEeRmu" class="btn btn-mercadolivre" target="_blank" rel="nofollow sponsored noopener">Ver preço no Mercado Livre</a>
+        </div>
+
+        <div class="comparison-table">
+            <h3>Motivacional ou térmica: qual escolher?</h3>
+            
+            <p><strong>Escolha a garrafa motivacional 2L se:</strong></p>
+            <ul>
+                <li>Você quer evitar recargas durante o dia</li>
+                <li>Precisa de lembretes visuais de consumo</li>
+                <li>Treina por períodos longos</li>
+                <li>Não se importa com temperatura ambiente</li>
+                <li>Tem onde acomodar volume maior</li>
+            </ul>
+            
+            <p style="margin-top: 20px;"><strong>Escolha a garrafa térmica inox se:</strong></p>
+            <ul>
+                <li>Você valoriza água gelada o tempo todo</li>
+                <li>Precisa de garrafa compacta e discreta</li>
+                <li>Prefere fazer recargas em troca de portabilidade</li>
+                <li>Trabalha em ambiente quente</li>
+                <li>Quer garrafa que caiba em porta-copo padrão</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>O que observar antes de comprar</h2>
+            
+            <h3>1. Sua rotina</h3>
+            <p>Academia com bebedouro próximo? Trabalho em escritório ou externo? Precisa carregar na mochila ou deixar na mesa?</p>
+            
+            <h3>2. Volume vs. Praticidade</h3>
+            <p>Mais volume = menos recargas, mas mais peso e espaço. Avalie o que você prioriza.</p>
+            
+            <h3>3. Temperatura</h3>
+            <p>Água gelada te incentiva a beber mais? Térmica vale a pena. Temperatura ambiente não incomoda? Motivacional pode ser suficiente.</p>
+            
+            <h3>4. Transporte</h3>
+            <p>Confira se a garrafa cabe na sua bolsa, mochila ou porta-copo do carro.</p>
+            
+            <h3>5. Limpeza</h3>
+            <p>Garrafas grandes e térmicas exigem limpeza cuidadosa. Avalie se você vai manter a rotina.</p>
+        </div>
+
+        <div class="section">
+            <h2>Onde comprar</h2>
+            
+            <p>Compare preço final, frete e prazo antes de decidir:</p>
+            
+            <div style="margin-top: 25px;">
+                <p><strong>Garrafa Motivacional 2L:</strong></p>
+                <a href="https://s.shopee.com.br/5q4uevNuQD" class="btn btn-shopee" target="_blank" rel="nofollow sponsored noopener">Ver na Shopee</a>
+            </div>
+            
+            <div style="margin-top: 25px;">
+                <p><strong>Garrafa Térmica Inox:</strong></p>
+                <a href="https://meli.la/2UEeRmu" class="btn btn-mercadolivre" target="_blank" rel="nofollow sponsored noopener">Ver no Mercado Livre</a>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Perguntas frequentes</h2>
+            
+            <div class="faq-accordion">
+                <div class="faq-item">
+                    <div class="faq-question">Garrafa de 2L é boa para rotina?</div>
+                    <div class="faq-answer">
+                        <p>Pode ser, se você prefere levar água para o dia todo e evitar recargas frequentes. Mas também é mais volumosa e pesada. Avalie se o tamanho combina com sua rotina de treino, trabalho e transporte.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Garrafa térmica é melhor que garrafa motivacional?</div>
+                    <div class="faq-answer">
+                        <p>Não necessariamente. Depende do que você prioriza: volume e marcação visual ou temperatura controlada. Cada uma tem vantagens diferentes.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Qual faz mais sentido para academia?</div>
+                    <div class="faq-answer">
+                        <p>Depende. Garrafa motivacional 2L pode ser prática para quem treina longamente e quer evitar idas ao bebedouro. Garrafa térmica faz sentido para quem quer água gelada durante o treino.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Qual faz mais sentido para trabalho?</div>
+                    <div class="faq-answer">
+                        <p>Garrafa térmica tende a ser mais discreta e mantém temperatura. Garrafa motivacional 2L pode ser grande demais para mesa de trabalho, mas útil para quem trabalha em pé ou em movimento.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">O EnergiaVital vende as garrafas?</div>
+                    <div class="faq-answer">
+                        <p>Não. O EnergiaVital organiza informações e links de compra. A compra é realizada diretamente no marketplace escolhido (Shopee ou Mercado Livre).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="disclaimer">
+            <strong>Aviso informativo</strong>
+            <p>As informações desta página têm finalidade informativa sobre escolha de garrafas para hidratação. Beber água adequadamente faz parte de hábitos saudáveis, mas a escolha da garrafa é uma questão de praticidade, não de saúde.</p>
+        </div>
+
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="/sobre">Sobre</a>
+                <a href="/privacidade">Privacidade</a>
+                <a href="/contato">Contato</a>
+            </div>
+            <div class="footer-copy">
+                © 2026 EnergiaVital. Conteúdo informativo e educacional.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const isActive = this.classList.contains('active');
+                
+                document.querySelectorAll('.faq-question').forEach(q => {
+                    q.classList.remove('active');
+                    q.nextElementSibling.classList.remove('show');
+                });
+                
+                if (!isActive) {
+                    this.classList.add('active');
+                    this.nextElementSibling.classList.add('show');
+                }
+            });
+        });
+    </script>
+
 </body>
 </html>
