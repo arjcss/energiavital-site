@@ -1,34 +1,333 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Conheça a proposta editorial do EnergiaVital.">
-<title>Sobre | EnergiaVital</title>
-<link rel="stylesheet" href="css/ev-style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="O que é o EnergiaVital, como funciona e o que fazemos. Informações práticas para ajudar você a comparar produtos antes de comprar.">
+    <title>Sobre | EnergiaVital</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        :root {
+            --bg-color: #FAFAF7;
+            --surface: #FFFFFF;
+            --primary: #2F7D5C;
+            --primary-light: #E7F4EC;
+            --secondary: #2F6F9F;
+            --accent: #D99A2B;
+            --text: #1F2933;
+            --text-muted: #64748B;
+            --border: #E5E7EB;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-color);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        .header {
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        .logo-text {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .hero {
+            background: var(--primary-light);
+            border: 2px solid var(--primary);
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 38px;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: var(--text-muted);
+        }
+
+        .section {
+            background: var(--surface);
+            border-radius: 12px;
+            padding: 35px;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 26px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        p {
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0;
+        }
+
+        ul li {
+            padding: 8px 0 8px 25px;
+            position: relative;
+        }
+
+        ul li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .highlight-box {
+            background: var(--primary-light);
+            border-left: 4px solid var(--primary);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 6px;
+        }
+
+        .footer {
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .footer-copy {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 15px;
+            }
+
+            h1 {
+                font-size: 30px;
+            }
+
+            .hero {
+                padding: 30px 20px;
+            }
+
+            .section {
+                padding: 25px 20px;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
 </head>
 <body>
-<header class="site-header">
-  <a class="brand" href="index.html">Energia<span>Vital</span></a>
-  <button class="nav-toggle" aria-label="Abrir menu">☰</button>
-  <nav class="nav-links" aria-label="Navegação principal">
-    <a href="index.html">Início</a>
-    <a href="suplementos.html">Suplementos</a>
-    <a href="sono-recuperacao.html">Sono</a>
-    <a href="treino-academia.html">Treino</a>
-    <a href="hidratacao.html">Hidratação</a>
-    <a href="guias.html">Guias</a>
-    <a href="sobre.html">Sobre</a>
-  </nav>
-</header>
-<main><section class="hero compact"><div><span class="eyebrow">EnergiaVital</span><h1>Sobre</h1><p>Conheça a proposta editorial do EnergiaVital.</p></div></section><section class="section content"><h2>O que é o EnergiaVital</h2><p>O EnergiaVital é uma curadoria independente para quem quer comparar produtos ligados a energia, sono, treino, hidratação e rotina saudável antes de comprar.</p><h2>O que fazemos</h2><p>Organizamos guias de compra com pontos positivos, pontos de atenção, perguntas frequentes e links de compra para marketplaces parceiros.</p><h2>O que não fazemos</h2><p>Não vendemos produtos diretamente, não prometemos resultado e não substituímos orientação médica, nutricional ou profissional.</p><h2>Como usar o site</h2><p>Entre por uma dúvida, leia os pontos de atenção, compare preço, vendedor, frete e prazo, e só então conclua a compra no marketplace escolhido.</p></section></main>
-<footer class="site-footer">
-  <div><strong>EnergiaVital</strong><p>Curadoria para energia, sono, treino, hidratação e rotina saudável.</p></div>
-  <div class="footer-links"><a href="sobre.html">Sobre</a><a href="transparencia-comercial.html">Transparência comercial</a><a href="privacidade.html">Privacidade</a><a href="contato.html">Contato</a></div>
-</footer>
-<script>
-document.querySelector('.nav-toggle')?.addEventListener('click',()=>document.querySelector('.nav-links')?.classList.toggle('open'));
-</script>
+
+    <header class="header">
+        <div class="header-container">
+            <a href="/" class="logo">
+                <img src="logo_energia_vital.png" alt="EnergiaVital">
+                <span class="logo-text">EnergiaVital</span>
+            </a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="/">Início</a></li>
+                    <li><a href="/suplementos.html">Suplementos</a></li>
+                    <li><a href="/sono-recuperacao.html">Sono</a></li>
+                    <li><a href="/treino-academia.html">Treino</a></li>
+                    <li><a href="/hidratacao.html">Hidratação</a></li>
+                    <li><a href="/guias.html">Guias</a></li>
+                    <li><a href="/sobre.html">Sobre</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <div class="hero">
+            <h1>Sobre o EnergiaVital</h1>
+            <p class="subtitle">Informações práticas para decisões mais claras antes de comprar.</p>
+        </div>
+
+        <div class="section">
+            <h2>O que é o EnergiaVital</h2>
+            <p>O EnergiaVital organiza informações sobre produtos relacionados a energia, sono, treino e hidratação.</p>
+            <p>O objetivo é ajudar você a comparar opções com mais clareza antes de comprar, sem enrolação ou promessas exageradas.</p>
+        </div>
+
+        <div class="section">
+            <h2>O que fazemos</h2>
+            <ul>
+                <li>Organizamos guias práticos sobre suplementos, sono, treino e hidratação</li>
+                <li>Apresentamos informações baseadas em referências científicas quando relevante</li>
+                <li>Indicamos quando buscar orientação profissional</li>
+                <li>Comparamos produtos disponíveis no mercado com links para compra</li>
+                <li>Evitamos promessas exageradas ou linguagem que induza decisões impulsivas</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>O que NÃO fazemos</h2>
+            <ul>
+                <li>Não vendemos produtos diretamente</li>
+                <li>Não prometemos resultados garantidos ou soluções mágicas</li>
+                <li>Não substituímos orientação médica, nutricional ou profissional</li>
+                <li>Não indicamos marcas como únicas ou melhores</li>
+                <li>Não escondemos que os links de compra podem gerar comissão</li>
+            </ul>
+        </div>
+
+        <div class="highlight-box">
+            <p><strong>Decisões melhores começam antes do clique.</strong></p>
+            <p>Queremos que você entenda o contexto antes de decidir, não que compre por impulso.</p>
+        </div>
+
+        <div class="section">
+            <h2>Como funciona</h2>
+            <p>Os guias apresentam informações sobre produtos disponíveis no mercado. Quando você clica em um link de compra, é direcionado para o marketplace escolhido (Amazon, Mercado Livre ou Shopee).</p>
+            <p>A compra é feita diretamente no marketplace. O EnergiaVital não processa pagamentos, não armazena dados de cartão e não gerencia entregas.</p>
+            <p>Alguns links podem gerar comissão caso a compra seja concluída. Isso não altera o preço para você e permite que o EnergiaVital continue produzindo conteúdo.</p>
+        </div>
+
+        <div class="section">
+            <h2>Por que criamos o EnergiaVital</h2>
+            <p>Muita gente compra suplementos, travesseiros ou garrafas sem entender o que está comprando, movida por promessas exageradas ou tendências passageiras.</p>
+            <p>Criamos o EnergiaVital para organizar informações de forma prática e honesta, sem enrolação.</p>
+            <p>Acreditamos que decisão informada é melhor que decisão impulsiva.</p>
+        </div>
+
+        <div class="section">
+            <h2>Princípios editoriais</h2>
+            <ul>
+                <li><strong>Clareza:</strong> linguagem direta, sem jargão desnecessário</li>
+                <li><strong>Contexto:</strong> explicar quando algo faz sentido, não apenas vender</li>
+                <li><strong>Honestidade:</strong> não prometer o que o produto não entrega</li>
+                <li><strong>Prudência:</strong> indicar quando buscar orientação profissional</li>
+                <li><strong>Referências:</strong> usar fontes confiáveis quando disponíveis</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="/sobre.html">Sobre</a>
+                <a href="/privacidade.html">Privacidade</a>
+                <a href="/contato.html">Contato</a>
+            </div>
+            <div class="footer-copy">
+                © 2026 EnergiaVital. Conteúdo informativo e educacional.
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>

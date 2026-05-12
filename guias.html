@@ -1,38 +1,318 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Escolha uma dúvida, compare com mais clareza e avance para o produto certo com menos impulso.">
-<title>Guias EnergiaVital | Compare antes de comprar</title>
-<link rel="stylesheet" href="css/ev-style.css">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Guias EnergiaVital","url":"https://energiavital-site.pages.dev/guias.html"}</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Guias práticos sobre suplementos, sono, treino e hidratação. Compare produtos com mais clareza antes de comprar.">
+    <title>Guias EnergiaVital | Compare antes de comprar</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-color: #FAFAF7;
+            --surface: #FFFFFF;
+            --primary: #2F7D5C;
+            --primary-light: #E7F4EC;
+            --secondary: #2F6F9F;
+            --accent: #D99A2B;
+            --text: #1F2933;
+            --text-muted: #64748B;
+            --border: #E5E7EB;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-color);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        .header {
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        .logo-text {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, #267052 100%);
+            color: white;
+            border-radius: 16px;
+            padding: 50px 40px;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            opacity: 0.95;
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            color: var(--primary);
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-light);
+        }
+
+        .guides-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .guide-card {
+            background: var(--surface);
+            border: 2px solid var(--primary);
+            border-radius: 12px;
+            padding: 30px;
+            text-decoration: none;
+            display: block;
+            transition: all 0.3s;
+        }
+
+        .guide-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(47, 125, 92, 0.15);
+        }
+
+        .guide-card h3 {
+            color: var(--primary);
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .guide-card p {
+            color: var(--text-muted);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .footer {
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .footer-copy {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 15px;
+            }
+
+            .hero {
+                padding: 35px 25px;
+            }
+
+            .hero h1 {
+                font-size: 30px;
+            }
+
+            .guides-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
 </head>
 <body>
-<header class="site-header">
-  <a class="brand" href="index.html">Energia<span>Vital</span></a>
-  <button class="nav-toggle" aria-label="Abrir menu">☰</button>
-  <nav class="nav-links" aria-label="Navegação principal">
-    <a href="index.html">Início</a>
-    <a href="suplementos.html">Suplementos</a>
-    <a href="sono-recuperacao.html">Sono</a>
-    <a href="treino-academia.html">Treino</a>
-    <a href="hidratacao.html">Hidratação</a>
-    <a href="guias.html">Guias</a>
-    <a href="sobre.html">Sobre</a>
-  </nav>
-</header>
-<main><section class="hero compact"><div><span class="eyebrow">Guias</span><h1>Guias EnergiaVital</h1><p>Escolha uma dúvida, compare com mais clareza e avance para o produto certo com menos impulso.</p></div></section>
-    <section class="section"><h2>Guias para suplementos</h2><div class="link-grid"><a href="creatina-soldiers-vale-a-pena.html" class="guide-card"><h3>Creatina Soldiers vale a pena?</h3><p>Leia antes de decidir.</p></a><a href="trio-magnesio-ocean-drop.html" class="guide-card"><h3>Trio Magnésio Ocean Drop vale a pena?</h3><p>Leia antes de decidir.</p></a><a href="coenzima-q10-vitafor.html" class="guide-card"><h3>Coenzima Q10 Vitafor vale a pena?</h3><p>Leia antes de decidir.</p></a></div></section>
-    <section class="section"><h2>Guias para sono</h2><div class="link-grid"><a href="acordo-cansado-mesmo-dormindo.html" class="guide-card"><h3>Acordo cansado mesmo dormindo</h3><p>Leia antes de decidir.</p></a><a href="travesseiro-cervical-fibrasca.html" class="guide-card"><h3>Travesseiro Cervical Fibrasca vale a pena?</h3><p>Leia antes de decidir.</p></a></div></section>
-    <section class="section"><h2>Guias para treino</h2><div class="link-grid"><a href="creatina-soldiers-vale-a-pena.html" class="guide-card"><h3>Creatina Soldiers</h3><p>Leia antes de decidir.</p></a><a href="garrafa-termica-academia.html" class="guide-card"><h3>Garrafa térmica para academia</h3><p>Leia antes de decidir.</p></a></div></section>
-    <section class="section"><h2>Guias para hidratação</h2><div class="link-grid"><a href="garrafa-termica-academia.html" class="guide-card"><h3>Garrafa motivacional 2L</h3><p>Leia antes de decidir.</p></a><a href="garrafa-termica-academia.html" class="guide-card"><h3>Garrafa térmica inox academia</h3><p>Leia antes de decidir.</p></a></div></section></main>
-<footer class="site-footer">
-  <div><strong>EnergiaVital</strong><p>Curadoria para energia, sono, treino, hidratação e rotina saudável.</p></div>
-  <div class="footer-links"><a href="sobre.html">Sobre</a><a href="transparencia-comercial.html">Transparência comercial</a><a href="privacidade.html">Privacidade</a><a href="contato.html">Contato</a></div>
-</footer>
-<script>
-document.querySelector('.nav-toggle')?.addEventListener('click',()=>document.querySelector('.nav-links')?.classList.toggle('open'));
-</script>
+
+    <header class="header">
+        <div class="header-container">
+            <a href="/" class="logo">
+                <img src="logo_energia_vital.png" alt="EnergiaVital">
+                <span class="logo-text">EnergiaVital</span>
+            </a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="/">Início</a></li>
+                    <li><a href="/suplementos.html">Suplementos</a></li>
+                    <li><a href="/sono-recuperacao.html">Sono</a></li>
+                    <li><a href="/treino-academia.html">Treino</a></li>
+                    <li><a href="/hidratacao.html">Hidratação</a></li>
+                    <li><a href="/guias.html">Guias</a></li>
+                    <li><a href="/sobre.html">Sobre</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <div class="hero">
+            <h1>Guias práticos para decisões mais claras</h1>
+            <p>Compare produtos com informações organizadas por categoria: suplementos, sono, treino e hidratação.</p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Guias de suplementos</h2>
+            <div class="guides-grid">
+                <a href="/creatina-soldiers-vale-a-pena.html" class="guide-card">
+                    <h3>Creatina Soldiers</h3>
+                    <p>Entenda o que é creatina, por que atletas usam, quais benefícios são associados ao uso com treino e quando pode fazer sentido.</p>
+                </a>
+
+                <a href="/trio-magnesio-ocean-drop.html" class="guide-card">
+                    <h3>Trio Magnésio Ocean Drop</h3>
+                    <p>Veja o que é magnésio, por que aparece em rotinas de bem-estar e quando buscar orientação profissional.</p>
+                </a>
+
+                <a href="/coenzima-q10-vitafor.html" class="guide-card">
+                    <h3>Coenzima Q10 Vitafor</h3>
+                    <p>Entenda o que significa energia celular, por que algumas pessoas buscam Q10 e quais cuidados observar.</p>
+                </a>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Guias de sono e recuperação</h2>
+            <div class="guides-grid">
+                <a href="/acordo-cansado-mesmo-dormindo.html" class="guide-card">
+                    <h3>Acorda cansado mesmo dormindo?</h3>
+                    <p>Veja fatores que podem influenciar cansaço ao acordar: sono, hidratação, alimentação e rotina.</p>
+                </a>
+
+                <a href="/travesseiro-cervical-fibrasca.html" class="guide-card">
+                    <h3>Travesseiro Cervical</h3>
+                    <p>Entenda quando travesseiro cervical pode fazer sentido e como posição de sono influencia a escolha.</p>
+                </a>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Guias de hidratação</h2>
+            <div class="guides-grid">
+                <a href="/garrafa-termica-academia.html" class="guide-card">
+                    <h3>Garrafas para Academia</h3>
+                    <p>Compare garrafa motivacional 2L e garrafa térmica. Veja qual faz mais sentido para seu treino, trabalho e rotina.</p>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="/sobre.html">Sobre</a>
+                <a href="/privacidade.html">Privacidade</a>
+                <a href="/contato.html">Contato</a>
+            </div>
+            <div class="footer-copy">
+                © 2026 EnergiaVital. Conteúdo informativo e educacional.
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>
