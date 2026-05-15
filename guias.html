@@ -115,6 +115,60 @@
             margin-bottom: 50px;
         }
 
+        .intro-panel {
+            background: var(--primary-light);
+            border-left: 5px solid var(--primary);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 36px;
+        }
+
+        .intro-panel h2 {
+            color: var(--primary);
+            font-size: 26px;
+            margin-bottom: 12px;
+        }
+
+        .intro-panel p {
+            color: var(--text);
+            margin-bottom: 10px;
+        }
+
+        .quick-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            margin-bottom: 45px;
+        }
+
+        .quick-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 20px;
+            text-decoration: none;
+            color: var(--text);
+            transition: all 0.3s;
+        }
+
+        .quick-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 18px rgba(47, 125, 92, 0.12);
+        }
+
+        .quick-card strong {
+            display: block;
+            color: var(--primary);
+            font-size: 17px;
+            margin-bottom: 6px;
+        }
+
+        .quick-card span {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
         .section-title {
             font-size: 28px;
             color: var(--primary);
@@ -154,6 +208,18 @@
             color: var(--text-muted);
             font-size: 15px;
             line-height: 1.6;
+        }
+
+        .guide-card.featured {
+            border-color: var(--accent);
+            background: #FFF7E6;
+        }
+
+        .guide-card small {
+            display: inline-block;
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 10px;
         }
 
         .footer {
@@ -250,56 +316,135 @@
     <div class="container">
 
         <div class="hero">
-            <h1>Guias práticos para decisões mais claras</h1>
-            <p>Compare produtos com informações organizadas por categoria: suplementos, sono, treino e hidratação.</p>
+            <h1>Sua dúvida antes da compra começa aqui</h1>
+            <p>Escolha pelo objetivo: mais energia, rotina noturna, treino, sono ou hidratação. Cada guia ajuda você a comparar melhor antes de decidir.</p>
         </div>
 
-        <div class="section">
+        <div class="intro-panel">
+            <h2>Comece pelo que você quer organizar</h2>
+            <p>Se você veio do Instagram, não precisa começar pela home. Use esta página como mapa: escolha uma dúvida, leia o guia e só avance para uma compra quando fizer sentido para sua rotina.</p>
+            <p>O EnergiaVital não vende produtos diretamente. A compra acontece no marketplace escolhido, depois que você compara contexto, pontos de atenção e opções disponíveis.</p>
+        </div>
+
+        <div class="quick-grid">
+            <a href="#suplementos" class="quick-card">
+                <strong>Suplementos</strong>
+                <span>Creatina, magnésio, vitaminas A/D3/E/K2 e Q10.</span>
+            </a>
+            <a href="#sono" class="quick-card">
+                <strong>Sono e rotina noturna</strong>
+                <span>Cansaço ao acordar, travesseiro e desaceleração.</span>
+            </a>
+            <a href="#treino" class="quick-card">
+                <strong>Treino e academia</strong>
+                <span>Força, constância, hidratação e recuperação.</span>
+            </a>
+            <a href="#hidratacao" class="quick-card">
+                <strong>Hidratação</strong>
+                <span>Garrafa motivacional, térmica e rotina diária.</span>
+            </a>
+        </div>
+
+        <div class="section" id="suplementos">
             <h2 class="section-title">Guias de suplementos</h2>
             <div class="guides-grid">
-                <a href="/creatina-soldiers-vale-a-pena.html" class="guide-card">
+                <a href="/creatina-soldiers-vale-a-pena.html" class="guide-card featured">
+                    <small>Treino e força</small>
                     <h3>Creatina Soldiers</h3>
                     <p>Entenda o que é creatina, por que atletas usam, quais benefícios são associados ao uso com treino e quando pode fazer sentido.</p>
                 </a>
 
                 <a href="/trio-magnesio-ocean-drop.html" class="guide-card">
+                    <small>Magnésio em cápsulas</small>
                     <h3>Trio Magnésio Ocean Drop</h3>
                     <p>Veja o que é magnésio, por que aparece em rotinas de bem-estar e quando buscar orientação profissional.</p>
                 </a>
 
                 <a href="/magnesio-inositol-relief-true-source.html" class="guide-card">
+                    <small>Rotina noturna</small>
                     <h3>Magnésio + Inositol Relief True Source</h3>
                     <p>Compare as versões Maracujá, Limão e Camomila com Lavanda para uma rotina noturna mais consciente.</p>
                 </a>
 
+                <a href="/suplementos.html#vitamina-d-adek" class="guide-card">
+                    <small>Vitaminas A, D3, E e K2</small>
+                    <h3>Restaure Gotas Central Nutrition</h3>
+                    <p>Entenda por que a vitamina D não deve ser vista sozinha e como o conjunto A, D3, E e K2 entra na comparação.</p>
+                </a>
+
                 <a href="/coenzima-q10-vitafor.html" class="guide-card">
+                    <small>Energia celular</small>
                     <h3>Coenzima Q10 Vitafor</h3>
                     <p>Entenda o que significa energia celular, por que algumas pessoas buscam Q10 e quais cuidados observar.</p>
+                </a>
+
+                <a href="/suplementos.html" class="guide-card">
+                    <small>Categoria completa</small>
+                    <h3>Ver todos os suplementos</h3>
+                    <p>Veja a visão geral da categoria e compare os principais pontos antes de escolher um produto.</p>
                 </a>
             </div>
         </div>
 
-        <div class="section">
+        <div class="section" id="sono">
             <h2 class="section-title">Guias de sono e recuperação</h2>
             <div class="guides-grid">
-                <a href="/acordo-cansado-mesmo-dormindo.html" class="guide-card">
+                <a href="/acordo-cansado-mesmo-dormindo.html" class="guide-card featured">
+                    <small>Dor principal</small>
                     <h3>Acorda cansado mesmo dormindo?</h3>
                     <p>Veja fatores que podem influenciar cansaço ao acordar: sono, hidratação, alimentação e rotina.</p>
                 </a>
 
                 <a href="/travesseiro-cervical-fibrasca.html" class="guide-card">
+                    <small>Conforto para dormir</small>
                     <h3>Travesseiro Cervical</h3>
                     <p>Entenda quando travesseiro cervical pode fazer sentido e como posição de sono influencia a escolha.</p>
+                </a>
+
+                <a href="/sono-recuperacao.html" class="guide-card">
+                    <small>Categoria completa</small>
+                    <h3>Sono e recuperação</h3>
+                    <p>Organize os principais fatores de uma rotina de descanso: ambiente, horário, telas e escolhas de apoio.</p>
                 </a>
             </div>
         </div>
 
-        <div class="section">
+        <div class="section" id="treino">
+            <h2 class="section-title">Guias de treino e academia</h2>
+            <div class="guides-grid">
+                <a href="/treino-academia.html" class="guide-card">
+                    <small>Categoria completa</small>
+                    <h3>Treino e academia</h3>
+                    <p>Veja como creatina, hidratação, constância e recuperação se conectam em uma rotina de treino mais organizada.</p>
+                </a>
+
+                <a href="/creatina-soldiers-vale-a-pena.html" class="guide-card">
+                    <small>Suplemento para comparar</small>
+                    <h3>Creatina Soldiers no treino</h3>
+                    <p>Use o guia da creatina para avaliar preço, vendedor, entrega e contexto antes de comprar.</p>
+                </a>
+
+                <a href="/garrafa-termica-academia.html" class="guide-card">
+                    <small>Acessório de rotina</small>
+                    <h3>Garrafa para academia</h3>
+                    <p>Compare garrafa motivacional e térmica para hidratação durante treino, trabalho e deslocamento.</p>
+                </a>
+            </div>
+        </div>
+
+        <div class="section" id="hidratacao">
             <h2 class="section-title">Guias de hidratação</h2>
             <div class="guides-grid">
-                <a href="/garrafa-termica-academia.html" class="guide-card">
+                <a href="/garrafa-termica-academia.html" class="guide-card featured">
+                    <small>Comparativo prático</small>
                     <h3>Garrafas para Academia</h3>
                     <p>Compare garrafa motivacional 2L e garrafa térmica. Veja qual faz mais sentido para seu treino, trabalho e rotina.</p>
+                </a>
+
+                <a href="/hidratacao.html" class="guide-card">
+                    <small>Categoria completa</small>
+                    <h3>Hidratação no dia a dia</h3>
+                    <p>Entenda como volume, temperatura, transporte e visibilidade influenciam o hábito de beber água.</p>
                 </a>
             </div>
         </div>
