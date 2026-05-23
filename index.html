@@ -354,6 +354,36 @@
             margin-top: 22px;
         }
 
+        .diagnostic-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
+            margin-top: 22px;
+        }
+
+        .diagnostic-card {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            background: #fff;
+            border: 1px solid rgba(47, 125, 92, 0.16);
+            border-radius: 16px;
+            padding: 18px;
+            box-shadow: 0 10px 24px rgba(31, 41, 51, 0.06);
+            color: var(--text-muted);
+            font-size: 16px;
+        }
+
+        .diagnostic-card::before {
+            content: "";
+            width: 10px;
+            height: 10px;
+            border-radius: 999px;
+            background: var(--accent);
+            flex: 0 0 auto;
+            margin-top: 8px;
+        }
+
         .decision-item {
             background: var(--primary-light);
             border-radius: 16px;
@@ -433,7 +463,8 @@
             .route-grid,
             .guide-grid,
             .category-grid,
-            .decision-strip {
+            .decision-strip,
+            .diagnostic-grid {
                 grid-template-columns: 1fr 1fr;
             }
 
@@ -459,7 +490,8 @@
             .route-grid,
             .guide-grid,
             .category-grid,
-            .decision-strip {
+            .decision-strip,
+            .diagnostic-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -522,32 +554,50 @@
             <div class="hero-grid">
                 <div>
                     <span class="eyebrow">Curadoria para decidir melhor</span>
-                    <h1>Seu corpo dá sinais. Sua compra precisa de contexto.</h1>
-                    <p>O EnergiaVital ajuda você a sair da dúvida antes de comprar: sono ruim, cansaço, pernas pesadas, intestino, treino, hidratação e suplementos explicados de forma simples.</p>
+                    <h1>Antes de comprar mais uma solução, entenda sua rotina.</h1>
+                    <p>Você provavelmente já quer comprar algo para melhorar cansaço, sono, energia ou constância. O EnergiaVital ajuda você a entender se essa escolha faz sentido antes de gastar.</p>
                     <div class="hero-actions">
-                        <a href="#comece" class="btn btn-primary">Escolher pelo que sinto</a>
-                        <a href="/guias.html" class="btn btn-secondary">Ver biblioteca de guias</a>
+                        <a href="#diagnostico" class="btn btn-primary">Encontrar minha melhor escolha</a>
+                        <a href="/acordo-cansado-mesmo-dormindo.html" class="btn btn-secondary">Começar pelo cansaço ao acordar</a>
                     </div>
                 </div>
                 <aside class="hero-panel">
-                    <h2>Como usar o EnergiaVital</h2>
+                    <h2>Menos arrependimento de compra</h2>
                     <ul>
-                        <li>Comece pela dor ou objetivo do momento.</li>
-                        <li>Entenda os pontos de atenção antes de comprar.</li>
-                        <li>Compare produtos, vendedores, frete e prazo.</li>
-                        <li>Conclua a compra fora do EnergiaVital, no marketplace escolhido.</li>
+                        <li>Organize a dor antes de escolher o produto.</li>
+                        <li>Entenda se a expectativa é realista para seu caso.</li>
+                        <li>Compare contexto, preço, vendedor, frete e prazo.</li>
+                        <li>Evite comprar por impulso só porque o anúncio parece promissor.</li>
                     </ul>
                 </aside>
+            </div>
+        </section>
+
+        <section class="section" id="diagnostico">
+            <div class="section-header">
+                <div>
+                    <span class="section-kicker">Diagnóstico de entrada</span>
+                    <h2>Não compre ainda. Primeiro responda.</h2>
+                </div>
+                <p>Nem sempre o problema é falta de suplemento. Às vezes é sono ruim, hidratação baixa, excesso de telas, sedentarismo, desconforto físico ou uma compra feita no impulso.</p>
+            </div>
+            <div class="diagnostic-grid">
+                <div class="diagnostic-card">Você dorme várias horas, mas acorda cansado?</div>
+                <div class="diagnostic-card">Você quer energia, mas sua rotina noturna está quebrada?</div>
+                <div class="diagnostic-card">Você treina ou quer treinar, mas perdeu constância?</div>
+                <div class="diagnostic-card">Você toma pouca água e percebe queda de disposição?</div>
+                <div class="diagnostic-card">Você compra suplemento sem comparar composição, preço e contexto?</div>
+                <div class="diagnostic-card">Você já comprou algo para bem-estar e depois sentiu que não era para sua rotina?</div>
             </div>
         </section>
 
         <section class="section" id="comece">
             <div class="section-header">
                 <div>
-                    <span class="section-kicker">Entrada principal</span>
-                    <h2>Comece pelo que você sente agora</h2>
+                    <span class="section-kicker">Escolha seu ponto de partida</span>
+                    <h2>Agora transforme a dor em caminho</h2>
                 </div>
-                <p>Essa é a rota mais rápida para quem veio do Instagram: escolha uma dor, leia o guia e avance para produtos apenas quando fizer sentido.</p>
+                <p>Aqui a compra aparece como consequência da análise, não como milagre. Escolha a hipótese que mais parece com sua rotina.</p>
             </div>
             <div class="pain-grid">
                 <a href="/acordo-cansado-mesmo-dormindo.html" class="card featured">
@@ -652,22 +702,22 @@
             <div class="section-header">
                 <div>
                     <span class="section-kicker">Método EnergiaVital</span>
-                    <h2>Comprar melhor começa antes do clique</h2>
+                    <h2>Reduza a chance de comprar errado</h2>
                 </div>
-                <p>A página não tenta empurrar produto. Ela organiza a decisão para você comparar com mais calma.</p>
+                <p>A página não tenta empurrar produto. Ela organiza a dor, transforma em hipótese e só depois apresenta caminhos de compra.</p>
             </div>
             <div class="decision-strip">
                 <div class="decision-item">
-                    <strong>1. Nomeie a dor</strong>
-                    <span>O que está incomodando: sono, cansaço, pernas, intestino, treino ou rotina?</span>
+                    <strong>1. Organize a dor</strong>
+                    <span>Cansaço, sono ruim, baixa energia, pernas, intestino, treino ou rotina.</span>
                 </div>
                 <div class="decision-item">
-                    <strong>2. Entenda o contexto</strong>
-                    <span>Produto nenhum funciona bem quando a base da rotina está completamente desorganizada.</span>
+                    <strong>2. Teste a hipótese</strong>
+                    <span>Sono, hidratação, treino, alimentação, conforto, telas ou suplementação.</span>
                 </div>
                 <div class="decision-item">
-                    <strong>3. Compare com critério</strong>
-                    <span>Preço final, vendedor, frete, prazo, composição, tamanho e uso real no dia a dia.</span>
+                    <strong>3. Compare antes de gastar</strong>
+                    <span>Objetivo, contexto de uso, pontos de atenção, preço, vendedor, frete e expectativa.</span>
                 </div>
             </div>
         </section>
