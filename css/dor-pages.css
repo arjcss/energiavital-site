@@ -1,0 +1,270 @@
+/*
+  EnergiaVital pain guide layer.
+  Presentation only: URLs and commercial attributes stay in each HTML page.
+*/
+
+.pain-hero {
+  background:
+    radial-gradient(circle at 12% 16%, rgba(255, 255, 255, 0.26), transparent 14rem),
+    linear-gradient(135deg, #235f47 0%, #2F7D5C 52%, #2F6F9F 100%);
+  color: #fff;
+  border: 1px solid rgba(47, 125, 92, 0.22);
+  border-radius: 28px;
+  padding: 60px 48px;
+  margin: 40px 0 28px;
+  box-shadow: 0 26px 68px rgba(31, 41, 51, 0.16);
+}
+
+.pain-hero .eyebrow,
+.guide-kicker {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 8px 13px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 850;
+}
+
+.pain-hero .eyebrow {
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  margin-bottom: 18px;
+}
+
+.guide-kicker {
+  background: #E7F4EC;
+  color: #2F7D5C;
+  margin-bottom: 14px;
+}
+
+.pain-hero h1 {
+  max-width: 980px;
+  font-size: clamp(38px, 6vw, 72px);
+  line-height: 1.03;
+  letter-spacing: -0.03em;
+  margin-bottom: 18px;
+}
+
+.pain-hero p {
+  max-width: 760px;
+  font-size: 20px;
+  line-height: 1.65;
+  opacity: 0.94;
+}
+
+.pain-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.pain-actions a,
+.store-btn,
+.internal-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 13px 18px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 850;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pain-actions a {
+  background: #fff;
+  color: #2F7D5C;
+}
+
+.pain-actions a.secondary {
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.pain-actions a:hover,
+.store-btn:hover,
+.internal-link:hover {
+  transform: translateY(-2px);
+}
+
+.guide-section,
+.quick-answer,
+.guide-notice,
+.decision-panel {
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid #E5E7EB;
+  border-radius: 22px;
+  padding: 30px;
+  margin-bottom: 26px;
+  box-shadow: 0 16px 40px rgba(31, 41, 51, 0.08);
+}
+
+.quick-answer {
+  border-color: rgba(47, 125, 92, 0.25);
+  background:
+    linear-gradient(180deg, rgba(231, 244, 236, 0.72), rgba(255, 255, 255, 0.94));
+}
+
+.guide-section h2,
+.quick-answer h2,
+.decision-panel h2,
+.guide-notice h2 {
+  font-size: clamp(26px, 4vw, 42px);
+  line-height: 1.12;
+  margin-bottom: 14px;
+  color: #1F2933;
+}
+
+.guide-section p,
+.quick-answer p,
+.guide-notice p,
+.decision-panel p {
+  color: #64748B;
+  font-size: 18px;
+  max-width: 930px;
+}
+
+.split-grid,
+.product-guide-grid,
+.check-grid,
+.related-grid {
+  display: grid;
+  gap: 18px;
+  margin-top: 22px;
+}
+
+.split-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.product-guide-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.check-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.related-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.info-card,
+.product-guide-card,
+.related-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(47, 125, 92, 0.16);
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: 0 14px 34px rgba(31, 41, 51, 0.075);
+}
+
+.info-card h3,
+.product-guide-card h3,
+.related-card h3 {
+  font-size: 21px;
+  line-height: 1.18;
+  margin-bottom: 10px;
+  color: #1F2933;
+}
+
+.info-card p,
+.product-guide-card p,
+.related-card p {
+  font-size: 16px;
+  color: #64748B;
+}
+
+.product-guide-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.product-guide-card .tag {
+  align-self: flex-start;
+  background: #E7F4EC;
+  color: #2F7D5C;
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: 850;
+  margin-bottom: 12px;
+}
+
+.button-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 18px;
+}
+
+.amazon {
+  background: #111820;
+  color: #fff;
+}
+
+.mercadolivre {
+  background: #FFE000;
+  color: #0E2A5C;
+  border: 1px solid #E5C700;
+}
+
+.shopee {
+  background: #EE4D2D;
+  color: #fff;
+}
+
+.internal-link {
+  background: #2F7D5C;
+  color: #fff;
+  margin-top: 16px;
+}
+
+.guide-list {
+  padding-left: 20px;
+  color: #64748B;
+  font-size: 17px;
+}
+
+.guide-list li + li {
+  margin-top: 8px;
+}
+
+.related-card {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (max-width: 980px) {
+  .product-guide-grid,
+  .check-grid,
+  .related-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .pain-hero {
+    padding: 42px 24px;
+    border-radius: 22px;
+  }
+
+  .split-grid,
+  .product-guide-grid,
+  .check-grid,
+  .related-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pain-actions a,
+  .store-btn,
+  .internal-link {
+    width: 100%;
+  }
+}
