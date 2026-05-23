@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Curadoria EnergiaVital com produtos para caminhada, sono, treino em casa, intestino, minerais, hidratação, conforto e organização da rotina.">
+    <title>Produtos para rotina saudável: caminhada, sono, treino e bem-estar | EnergiaVital</title>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Início",
+          "item": "https://energiavital-site.pages.dev/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guias",
+          "item": "https://energiavital-site.pages.dev/guias"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Produtos para rotina saudável",
+          "item": "https://energiavital-site.pages.dev/produtos-rotina-saudavel"
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-color: #FAFAF7;
+            --surface: #FFFFFF;
+            --primary: #2F7D5C;
+            --primary-light: #E7F4EC;
+            --secondary: #2F6F9F;
+            --accent: #D99A2B;
+            --text: #1F2933;
+            --muted: #64748B;
+            --border: #E5E7EB;
+            --warning-soft: #FFF7E6;
+        }
+
+        body {
+            font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: var(--bg-color);
+            color: var(--text);
+            line-height: 1.65;
+        }
+
+        .header {
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .header-container {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 18px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 22px;
+            flex-wrap: wrap;
+        }
+
+        .nav-menu a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 650;
+            font-size: 15px;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary);
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 42px 24px 64px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #2F7D5C 0%, #2F6F9F 100%);
+            color: #fff;
+            border-radius: 26px;
+            padding: 60px 48px;
+            margin-bottom: 28px;
+            box-shadow: 0 22px 60px rgba(31, 41, 51, 0.18);
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.18);
+            border: 1px solid rgba(255, 255, 255, 0.28);
+            padding: 8px 13px;
+            border-radius: 999px;
+            font-weight: 800;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 {
+            font-size: clamp(38px, 6vw, 72px);
+            line-height: 1.02;
+            margin-bottom: 18px;
+            letter-spacing: -0.03em;
+            max-width: 930px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 760px;
+            opacity: 0.94;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .hero-actions a,
+        .btn {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 46px;
+            padding: 13px 20px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 850;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .hero-actions a {
+            background: #fff;
+            color: var(--primary);
+        }
+
+        .hero-actions a.secondary {
+            background: rgba(255, 255, 255, 0.14);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.35);
+        }
+
+        .hero-actions a:hover,
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .intro-panel,
+        .section,
+        .decision-panel,
+        .notice {
+            background: rgba(255, 255, 255, 0.94);
+            border: 1px solid var(--border);
+            border-radius: 22px;
+            padding: 30px;
+            box-shadow: 0 16px 40px rgba(31, 41, 51, 0.08);
+            margin-bottom: 28px;
+        }
+
+        .intro-panel h2,
+        .section h2,
+        .decision-panel h2 {
+            font-size: clamp(26px, 4vw, 42px);
+            line-height: 1.1;
+            margin-bottom: 12px;
+        }
+
+        .intro-panel p,
+        .section p,
+        .notice p {
+            color: var(--muted);
+            font-size: 18px;
+            max-width: 920px;
+        }
+
+        .quick-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px;
+            margin: 28px 0;
+        }
+
+        .quick-card {
+            background: var(--surface);
+            border: 1px solid rgba(47, 125, 92, 0.18);
+            border-radius: 18px;
+            padding: 20px;
+            color: var(--text);
+            text-decoration: none;
+            box-shadow: 0 12px 30px rgba(31, 41, 51, 0.07);
+        }
+
+        .quick-card strong {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--primary);
+            font-size: 17px;
+        }
+
+        .quick-card span {
+            color: var(--muted);
+            font-size: 15px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 20px;
+            margin-top: 22px;
+        }
+
+        .product-card {
+            background: var(--surface);
+            border: 1px solid rgba(47, 125, 92, 0.18);
+            border-radius: 20px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            min-height: 100%;
+            box-shadow: 0 14px 34px rgba(31, 41, 51, 0.08);
+        }
+
+        .product-card .tag {
+            align-self: flex-start;
+            background: var(--primary-light);
+            color: var(--primary);
+            font-size: 12px;
+            font-weight: 850;
+            border-radius: 999px;
+            padding: 6px 10px;
+            margin-bottom: 14px;
+        }
+
+        .product-card h3 {
+            font-size: 22px;
+            line-height: 1.18;
+            margin-bottom: 12px;
+        }
+
+        .product-card p {
+            color: var(--muted);
+            font-size: 16px;
+            margin-bottom: 18px;
+        }
+
+        .button-row {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: auto;
+        }
+
+        .btn-amazon {
+            background: #111820;
+            color: #fff;
+        }
+
+        .btn-mercadolivre {
+            background: #FFE000;
+            color: #0E2A5C;
+            border: 1px solid #E5C700;
+        }
+
+        .btn-shopee {
+            background: #EE4D2D;
+            color: #fff;
+        }
+
+        .decision-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+            margin-top: 20px;
+        }
+
+        .decision-box {
+            background: var(--primary-light);
+            border: 1px solid rgba(47, 125, 92, 0.18);
+            border-radius: 18px;
+            padding: 22px;
+        }
+
+        .decision-box.warning {
+            background: var(--warning-soft);
+            border-color: rgba(217, 154, 43, 0.35);
+        }
+
+        .decision-box h3 {
+            margin-bottom: 10px;
+        }
+
+        .decision-box ul {
+            padding-left: 20px;
+            color: var(--muted);
+        }
+
+        .footer {
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+            padding: 32px 24px;
+        }
+
+        .footer-container {
+            max-width: 1180px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+            margin-bottom: 16px;
+        }
+
+        .footer-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 650;
+        }
+
+        .footer-copy {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        @media (max-width: 900px) {
+            .header-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .quick-grid,
+            .product-grid,
+            .decision-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 42px 26px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="css/ev-polish.css?v=2">
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <a href="/" class="logo">EnergiaVital</a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="/">Início</a></li>
+                    <li><a href="/suplementos.html">Suplementos</a></li>
+                    <li><a href="/sono-recuperacao.html">Sono</a></li>
+                    <li><a href="/treino-academia.html">Treino</a></li>
+                    <li><a href="/hidratacao.html">Hidratação</a></li>
+                    <li><a href="/guias.html">Guias</a></li>
+                    <li><a href="/sobre.html">Sobre</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <span class="badge">Nova curadoria por objetivo</span>
+            <h1>Produtos para rotina saudável: movimento, sono, treino e bem-estar</h1>
+            <p>Uma seleção organizada para quem acompanha o EnergiaVital no Instagram e quer sair da dúvida com mais clareza: caminhar melhor, dormir com mais conforto, treinar em casa, hidratar-se e comparar suplementos sem impulso.</p>
+            <div class="hero-actions">
+                <a href="#movimento-caminhada">Começar por caminhada</a>
+                <a href="#sono-descanso" class="secondary">Ver rotina noturna</a>
+                <a href="#intestino-minerais" class="secondary">Ver suplementos</a>
+            </div>
+        </section>
+
+        <section class="intro-panel">
+            <h2>Escolha primeiro pelo objetivo, depois pelo produto</h2>
+            <p>O caminho mais seguro não é abrir um marketplace e comprar o primeiro item que aparece. Primeiro, entenda a função: conforto dos pés, circulação, sono, hidratação, treino, intestino, minerais ou organização. Depois, compare preço final, vendedor, frete, prazo, avaliações recentes e detalhes do anúncio.</p>
+        </section>
+
+        <nav class="quick-grid" aria-label="Atalhos da curadoria">
+            <a href="#movimento-caminhada" class="quick-card">
+                <strong>Movimento e caminhada</strong>
+                <span>Meias, tênis, palmilhas e conforto para quem quer caminhar com mais constância.</span>
+            </a>
+            <a href="#sono-descanso" class="quick-card">
+                <strong>Sono e descanso</strong>
+                <span>Máscara, luz âmbar, protetor auricular e aromatizador para uma noite mais organizada.</span>
+            </a>
+            <a href="#intestino-minerais" class="quick-card">
+                <strong>Intestino e minerais</strong>
+                <span>Magnésio, psyllium, probióticos e vitaminas para comparar com prudência.</span>
+            </a>
+            <a href="#treino-casa" class="quick-card">
+                <strong>Treino em casa</strong>
+                <span>Halteres, kettlebell e roda abdominal para montar uma base simples.</span>
+            </a>
+            <a href="#recuperacao-conforto" class="quick-card">
+                <strong>Recuperação e conforto</strong>
+                <span>Massageadores e apoio para pés para reduzir atrito na rotina.</span>
+            </a>
+            <a href="#hidratacao-organizacao" class="quick-card">
+                <strong>Hidratação e organização</strong>
+                <span>Garrafa térmica e porta-comprimidos para facilitar repetição diária.</span>
+            </a>
+        </nav>
+
+        <section class="section" id="movimento-caminhada">
+            <h2>Movimento, caminhada e conforto dos pés</h2>
+            <p>Para quem está publicando ou acompanhando conteúdos sobre caminhada, pernas cansadas, pés doloridos e constância, estes itens ajudam a transformar intenção em rotina mais prática. Eles não substituem avaliação profissional quando há dor, inchaço importante ou sintomas persistentes.</p>
+
+            <div class="product-grid">
+                <article class="product-card">
+                    <span class="tag">Caminhada e circulação</span>
+                    <h3>Meia Compressão 3/4 Kendall sem ponteira</h3>
+                    <p>Boa opção para comparar quando a intenção é dar mais suporte às pernas em dias longos, viagens, trabalho em pé ou rotina com muita caminhada. Antes de comprar, confira tamanho, nível de compressão e indicação de uso.</p>
+                    <div class="button-row">
+                        <a href="https://amzn.to/4unUeKw" class="btn btn-amazon" target="_blank" rel="nofollow sponsored noopener">Ver preço na Amazon</a>
+                        <a href="https://meli.la/1e6g8zT" class="btn btn-mercadolivre" target="_blank" rel="nofollow sponsored noopener">Ver preço no Mercado Livre</a>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <span class="tag">Caminhada leve</span>
+                    <h3>Tênis masculino para corrida, academia e caminhada leve</h3>
+                    <p>Para quem quer começar pelo básico: um tênis macio, esportivo e versátil para caminhada leve, academia e rotina diária. Compare numeração, forma, material, solado e avaliações recentes.</p>
+                    <div class="button-row">
+                        <a href="https://amzn.to/4f3uZZl" class="btn btn-amazon" target="_blank" rel="nofollow sponsored noopener">Ver preço na Amazon</a>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <span class="tag">Caminhada leve</span>
+                    <h3>Tênis feminino Vili Olimp caminhada e academia</h3>
+                    <p>Uma opção para quem busca conforto em caminhada leve, academia e deslocamentos curtos. Antes de decidir, observe avaliações sobre forma, amortecimento, acabamento e troca.</p>
+                    <div class="button-row">
+                        <a href="https://meli.la/1Au78xj" class="btn btn-mercadolivre" target="_blank" rel="nofollow sponsored noopener">Ver preço no Mercado Livre</a>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <span class="tag">Conforto no calçado</span>
+                    <h3>Par de palmilhas esportivas para homens e mulheres</h3>
+                    <p>Palmilhas podem fazer sentido para quem quer mais conforto em tênis de treino, caminhada ou trabalho. Confira espessura, tamanho, corte, material e compatibilidade com seu calçado.</p>
+                    <div class="button-row">
+                        <a href="https://amzn.to/4uuhh6o" class="btn btn-amazon" target="_blank" rel="nofollow sponsored noopener">Ver preço na Amazon</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" id="sono-descanso">
+            <h2>Sono, descanso e rotina noturna</h2>
+            <p>O objetivo aqui é diminuir atrito: luz, ruído, excesso de estímulos e falta de ritual. Nenhum item garante sono perfeito, mas alguns podem ajudar a organizar ambiente e comportamento antes de dormir.</p>
+
+            <div class="product-grid">
+                <article class="product-card">
+                    <span class="tag">Escuro e conforto</span>
+                    <h3>Máscara de dormir blackout ou cetim</h3>
+                    <p>Boa para quem precisa bloquear luz, viaja, dorme em horários irregulares ou divide ambiente. Compare vedação, ajuste, tecido, pressão nos olhos e conforto lateral.</p>
+                    <div class="button-row">
+                        <a href="https://amzn.to/3Rr52ZV" class="btn btn-amazon" target="_blank" rel="nofollow sponsored noopener">Ver máscara 3D na Amazon</a>
+                        <a href="https://meli.la/2YpEcpY" class="btn btn-mercadolivre" target="_blank" rel="nofollow sponsored noopener">Ver máscara de cetim no Mercado Livre</a>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <span class="tag">Luz de noite</span>
+                    <h3>Lâmpada âmbar LED filamento E27</h3>
+                    <p>Uma luz mais quente pode combinar com o ritual de desaceleração à noite. Observe soquete, potência, temperatura visual da luz e onde ela será usada.</p>
+                    <div class="button-row">
+                        <a href="https://amzn.to/49hNzsU" class="btn btn-amazon" target="_blank" rel="nofollow sponsored noopener">Ver preço na Amazon</a>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <span class="tag">Ambiente</span>
+                    <h3>Difusor aromatizador elétrico Via Aroma</h3>
+                    <p>Para quem gosta de construir um sinal sensorial de pausa. Compare material, voltagem, facilidade de limpeza, tamanho do ambiente e óleos usados com cautela.</p>
+                    <div class="button-row">
+                        <a href="https://amzn.to/3RYn9X9" class="btn btn-amazon" target="_blank" rel="nofollow sponsored noopener">Ver versão matte black na Amazon</a>
+                        <a href="https://meli.la/1ihsfLb" class="btn btn-mercadolivre" target="_blank" rel="nofollow sponsored noopener">Ver kit no Mercado Livre</a>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <span class="tag">Ruído</span>
+                    <h3>Protetor auricular para dormir</h3>
+                    <p>Útil para quem sofre com barulho externo, ronco no ambiente ou viagens. Compare material, encaixe, reutilização, limpeza e conforto ao dormir de lado.</p>
+                    <div class="button-row">
+                        <a href="https://amzn.to/4wNuOHN" class="btn btn-amazon" target="_blank" rel="nofollow sponsored noopener">Ver preço na Amazon</a>
+                        <a href="https://meli.la/1KxTaLJ" class="btn btn-mercadolivre" target="_blank" rel="nofollow sponsored noopener">Ver preço no Mercado Livre</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" id="intestino-minerais">
+            <h2>Intestino, minerais e vitaminas</h2>
+            <p>Suplementos exigem mais prudência. Compare composição, dose por porção, rótulo, fabricante, vendedor e seu contexto individual. Se você usa medicamentos, tem condição de saúde, está gestante, amamentando ou tem dúvidas, busque orientação profissional.</p>
+
+            <div class="product-grid">
+                <article class="product-card">
+                    <span class="tag">Magnésio</span>
+                    <h3>Vhita Magnésio Quelato Trio com Vitamina B6</h3>
+                    <p>Opção para quem quer comparar magnésio dimalato, bisglicinato e taurato em cápsulas. Observe dose, forma química, quantidade por embalagem e orientação de uso.</p>
+                    <div class="button-row">
+                        <a href="https://amzn.to/4wNrmwM" class="btn btn-amazon" target="_blank" rel="nofollow sponsored noopener">Ver preço na Amazon</a>
+                        <a href="https://meli.la/11z6PhH" class="btn btn-mercadolivre" target="_blank" rel="nofollow sponsored noopener">Ver opção no Mercado Livre</a>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <span class="tag">Fibras</span>
+                    <h3>Psyllium Husk puro natural</h3>
+                    <p>Psyllium é uma fibra muito buscada por quem quer organizar melhor a rotina alimentar. Compare pureza, quantidade, textura, modo de uso e necessidade de aumentar água ao longo do dia.</p>
+                    <div class="button-row">
+                        <a href="https://amzn.to/4eYJfm1" class="btn btn-amazon" target="_blank" rel="nofollow sponsored noopener">Ver 500g na Amazon</a>
+                        <a href="https://meli.la/1p9fPjF" class="btn btn-mercadolivre" target="_blank" rel="nofollow sponsored noopener">Ver 1kg no Mercado Livre</a>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <span class="tag">Probióticos</span>
+                    <h3>Simfort Plus Vitafor e Probiótico 10 Nutrivitalle</h3>
+                    <p>Para comparar opções relacionadas à flora intestinal. Observe cepas, quantidade por cápsula, conservação, orientação do fabricante e se faz sentido no seu contexto.</p>
+                    <div class="button-row">
+                        <a href="https://amzn.to/49epPWK" class="btn btn-amazon" target="_blank" rel="nofollow sponsored noopener">Ver Simfort Plus na Amazon</a>
+                        <a href="https://meli.la/2ontc45" class="btn btn-mercadolivre" target="_blank" rel="nofollow sponsored noopener">Ver Probiótico 10 no Mercado Livre</a>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <span class="tag">Vitaminas A, D3, E e K2</span>
+                    <h3>Restaure Gotas Central Nutrition</h3>
+                    <p>Produto para quem está avaliando vitamina D dentro de um conjunto com A, E e K2. Confira dose, rótulo, frequência de uso e avaliação individual antes de comprar.</p>
+                    <div class="button-row">
+                        <a href="https://amzn.to/4v0vx6L" class="btn btn-amazon" target="_blank" rel="nofollow sponsored noopener">Ver preço na Amazon</a>
+                        <a href="https://meli.la/1tgEnxY" class="btn btn-mercadolivre" target="_blank" rel="nofollow sponsored noopener">Ver preço no Mercado Livre</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" id="treino-casa">
+            <h2>Treino em casa e força básica</h2>
+            <p>Para quem quer transformar motivação em prática, equipamentos ajustáveis podem economizar espaço e facilitar progressão. Antes de comprar, confira peso total, travas, pegada, material, espaço disponível e segurança de uso.</p>
+
+            <div class="product-grid">
+                <article class="product-card">
+                    <span class="tag">Força em casa</span>
+                    <h3>Kit halteres 6 em 1 até 40kg</h3>
+                    <p>Opção para quem quer montar uma base de treino em casa com variação de carga. Compare capacidade real, montagem, travas, espaço e avaliações sobre estabilidade.</p>
+                    <div class="button-row">
+                        <a href="https://meli.la/27ftKkC" class="btn btn-mercadolivre" target="_blank" rel="nofollow sponsored noopener">Ver preço no Mercado Livre</a>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <span class="tag">Compacto</span>
+                    <h3>Kit 6 em 1 halteres, anilhas e kettlebell 15kg</h3>
+                    <p>Boa alternativa para quem tem pouco espaço e quer começar com cargas menores. Observe limite de peso, firmeza das roscas e exercícios que pretende fazer.</p>
+                    <div class="button-row">
+                        <a href="https://meli.la/1EfeXnW" class="btn btn-mercadolivre" target="_blank" rel="nofollow sponsored noopener">Ver preço no Mercado Livre</a>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <span class="tag">Core e abdômen</span>
+                    <h3>Rodas abdominais mais vendidas na Amazon</h3>
+                    <p>Para comparar opções de roda abdominal antes de escolher uma. Veja estabilidade, pegada, largura da roda, apoio para joelhos e nível de experiência necessário.</p>
+                    <div class="button-row">
+                        <a href="https://amzn.to/4fn1Rwn" class="btn btn-amazon" target="_blank" rel="nofollow sponsored noopener">Ver opções na Amazon</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" id="recuperacao-conforto">
+            <h2>Recuperação, conforto e rotina de trabalho</h2>
+            <p>Itens de conforto não fazem milagre, mas podem reduzir atrito em dias longos, depois do treino ou durante home office. A melhor escolha depende do ponto de incômodo: pés, pernas, pescoço, ombros ou postura sentada.</p>
+
+            <div class="product-grid">
+                <article class="product-card">
+                    <span class="tag">Pés e pernas</span>
+                    <h3>Massageador de pés e pernas RelaxMedic 4 em 1</h3>
+                    <p>Para quem busca uma experiência de relaxamento em casa após dias intensos. Confira modos, intensidade, bivolt, tamanho e avaliações de conforto.</p>
+                    <div class="button-row">
+                        <a href="https://amzn.to/4a03psj" class="btn btn-amazon" target="_blank" rel="nofollow sponsored noopener">Ver preço na Amazon</a>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <span class="tag">Pescoço e ombros</span>
+                    <h3>Massageador recarregável maozinha Deep Jojosee</h3>
+                    <p>Opção para quem sente tensão no pescoço e ombros por tela, direção ou trabalho sentado. Compare autonomia, peso, ergonomia e intensidade.</p>
+                    <div class="button-row">
+                        <a href="https://meli.la/2kgX4JC" class="btn btn-mercadolivre" target="_blank" rel="nofollow sponsored noopener">Ver preço no Mercado Livre</a>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <span class="tag">Pés e pernas</span>
+                    <h3>Foot Massager profissional bivolt</h3>
+                    <p>Outra opção para comparar quando a prioridade é cuidado com pés e pernas. Observe voltagem, ajustes, tamanho, ruído e facilidade de guardar.</p>
+                    <div class="button-row">
+                        <a href="https://meli.la/2v3qHVv" class="btn btn-mercadolivre" target="_blank" rel="nofollow sponsored noopener">Ver preço no Mercado Livre</a>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <span class="tag">Home office</span>
+                    <h3>Apoio ergonômico para pés ajustável</h3>
+                    <p>Para quem trabalha sentado e quer melhorar apoio dos pés, conforto e organização da postura. Compare regulagem, material, altura, estabilidade e espaço sob a mesa.</p>
+                    <div class="button-row">
+                        <a href="https://amzn.to/4eYIUQh" class="btn btn-amazon" target="_blank" rel="nofollow sponsored noopener">Ver opção premium na Amazon</a>
+                        <a href="https://meli.la/1aYdRuF" class="btn btn-mercadolivre" target="_blank" rel="nofollow sponsored noopener">Ver Multivisão no Mercado Livre</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" id="hidratacao-organizacao">
+            <h2>Hidratação e organização diária</h2>
+            <p>Rotina boa é rotina fácil de repetir. Garrafa visível, comprimidos organizados e itens acessíveis reduzem esquecimento e ajudam a manter consistência ao longo da semana.</p>
+
+            <div class="product-grid">
+                <article class="product-card">
+                    <span class="tag">Hidratação</span>
+                    <h3>Garrafa térmica grande 1200ml isolada a vácuo</h3>
+                    <p>Boa opção para quem quer água gelada por mais tempo em treino, trabalho ou deslocamento. Confira peso cheia, vedação, tampa, alça e facilidade de limpeza.</p>
+                    <div class="button-row">
+                        <a href="https://meli.la/1pkg47g" class="btn btn-mercadolivre" target="_blank" rel="nofollow sponsored noopener">Ver preço no Mercado Livre</a>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <span class="tag">Organização</span>
+                    <h3>Porta-comprimidos grande premium</h3>
+                    <p>Para quem precisa organizar suplementos, vitaminas ou medicamentos conforme orientação recebida. Confira divisórias, tamanho, fechamento e facilidade de transporte.</p>
+                    <div class="button-row">
+                        <a href="https://meli.la/1a7Wu7R" class="btn btn-mercadolivre" target="_blank" rel="nofollow sponsored noopener">Ver preço no Mercado Livre</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="decision-panel">
+            <h2>Como decidir sem comprar por impulso</h2>
+            <div class="decision-grid">
+                <div class="decision-box">
+                    <h3>Faz mais sentido quando</h3>
+                    <ul>
+                        <li>o produto reduz um atrito real da sua rotina;</li>
+                        <li>você comparou preço final, frete e prazo;</li>
+                        <li>o vendedor tem boa reputação e informações claras;</li>
+                        <li>o item combina com o hábito que você quer manter.</li>
+                    </ul>
+                </div>
+                <div class="decision-box warning">
+                    <h3>Vale pausar se</h3>
+                    <ul>
+                        <li>a compra nasceu só de pressa ou ansiedade;</li>
+                        <li>o anúncio tem pouca informação;</li>
+                        <li>o frete muda muito o preço final;</li>
+                        <li>há condição de saúde que pede orientação profissional.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="notice">
+            <h2>Informação importante</h2>
+            <p>O EnergiaVital não vende produtos diretamente. Esta página organiza links de compra e pontos de atenção para ajudar você a comparar antes de decidir. Preço, estoque, entrega, pagamento, troca e garantia são definidos pelos marketplaces e vendedores.</p>
+            <p>Conteúdo informativo. Produtos de suplementação, compressão ou uso corporal devem ser avaliados conforme seu contexto individual e, quando necessário, com orientação profissional.</p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="/sobre.html">Sobre</a>
+                <a href="/privacidade.html">Privacidade</a>
+                <a href="/contato.html">Contato</a>
+            </div>
+            <div class="footer-copy">
+                © 2026 EnergiaVital. Conteúdo informativo e educacional.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
