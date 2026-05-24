@@ -350,62 +350,74 @@
         #comece .card {
             --tone-a: var(--primary);
             --tone-b: var(--secondary);
-            padding-top: 116px;
+            --shade-a: rgba(47, 125, 92, 0.10);
+            --shade-b: rgba(47, 111, 159, 0.08);
+            padding-top: 24px;
             background:
-                linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.94));
+                linear-gradient(135deg, var(--shade-a) 0%, rgba(255,255,255,0.96) 46%, var(--shade-b) 100%);
             border-color: rgba(47, 125, 92, 0.14);
         }
 
         #comece .card::before {
-            height: 86px;
-            background:
-                radial-gradient(circle at 86% 18%, rgba(255,255,255,0.34) 0 19px, transparent 20px),
-                radial-gradient(circle at 14% 74%, rgba(255,255,255,0.18) 0 24px, transparent 25px),
-                linear-gradient(135deg, var(--tone-a), var(--tone-b));
+            height: 0;
+            background: transparent;
         }
 
         #comece .card::after {
             content: "";
             position: absolute;
-            top: 25px;
-            left: 24px;
-            width: 46px;
-            height: 46px;
-            border-radius: 16px;
+            right: -34px;
+            top: -34px;
+            width: 118px;
+            height: 118px;
+            border-radius: 999px;
             background:
-                linear-gradient(135deg, rgba(255,255,255,0.28), rgba(255,255,255,0.08));
-            border: 1px solid rgba(255,255,255,0.32);
-            box-shadow: 18px 10px 0 rgba(255,255,255,0.12);
+                radial-gradient(circle, rgba(255,255,255,0.72) 0%, rgba(255,255,255,0) 68%);
+            border: 0;
+            box-shadow: none;
+            pointer-events: none;
         }
 
         #comece .pain-sleep {
             --tone-a: #2f6f9f;
             --tone-b: #d99a2b;
+            --shade-a: rgba(47, 111, 159, 0.11);
+            --shade-b: rgba(217, 154, 43, 0.13);
         }
 
         #comece .pain-legs {
             --tone-a: #2f7d5c;
             --tone-b: #b7791f;
+            --shade-a: rgba(47, 125, 92, 0.11);
+            --shade-b: rgba(183, 121, 31, 0.12);
         }
 
         #comece .pain-night {
             --tone-a: #1f2933;
             --tone-b: #2f6f9f;
+            --shade-a: rgba(31, 41, 51, 0.10);
+            --shade-b: rgba(47, 111, 159, 0.12);
         }
 
         #comece .pain-gut {
             --tone-a: #2f7d5c;
             --tone-b: #7bae7f;
+            --shade-a: rgba(47, 125, 92, 0.10);
+            --shade-b: rgba(123, 174, 127, 0.14);
         }
 
         #comece .pain-office {
             --tone-a: #64748b;
             --tone-b: #2f7d5c;
+            --shade-a: rgba(100, 116, 139, 0.11);
+            --shade-b: rgba(47, 125, 92, 0.10);
         }
 
         #comece .pain-training {
             --tone-a: #2f6f9f;
             --tone-b: #2f7d5c;
+            --shade-a: rgba(47, 111, 159, 0.11);
+            --shade-b: rgba(47, 125, 92, 0.11);
         }
 
         .decision-strip {
