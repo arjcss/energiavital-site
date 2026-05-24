@@ -338,6 +338,127 @@ p {
   gap: 26px !important;
 }
 
+.instagram-bridge {
+  position: relative;
+}
+
+.instagram-bridge .section-header,
+.instagram-bridge .section-title {
+  margin-bottom: 22px;
+}
+
+.instagram-bridge .section-lead {
+  max-width: 760px;
+  margin: -8px 0 22px;
+  color: var(--ev-muted);
+  font-size: 1.05rem;
+}
+
+.instagram-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.instagram-card {
+  position: relative;
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 22px;
+  border-radius: 20px;
+  border: 1px solid rgba(47, 125, 92, 0.14);
+  color: var(--ev-text);
+  text-decoration: none;
+  background:
+    radial-gradient(circle at 88% 12%, rgba(255, 255, 255, 0.76), transparent 4.6rem),
+    linear-gradient(135deg, var(--ig-a, rgba(47, 125, 92, 0.10)), rgba(255, 253, 248, 0.98) 48%, var(--ig-b, rgba(217, 154, 43, 0.10)));
+  box-shadow: var(--ev-shadow-sm);
+}
+
+.instagram-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--ev-shadow-md);
+}
+
+.instagram-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, transparent 0 18%, rgba(255,255,255,0.22) 18% 19%, transparent 19% 100%),
+    radial-gradient(circle at 12% 82%, rgba(47,125,92,0.10), transparent 5.5rem);
+  opacity: 0.8;
+}
+
+.instagram-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.instagram-card small {
+  width: fit-content;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.70);
+  color: var(--ev-primary-strong);
+  font-size: 0.78rem;
+  font-weight: 850;
+  margin-bottom: 46px;
+}
+
+.instagram-card h3 {
+  color: var(--ev-primary-strong) !important;
+  font-size: clamp(1.18rem, 2vw, 1.48rem);
+  line-height: 1.12;
+  margin: 0 0 10px;
+}
+
+.instagram-card p {
+  color: var(--ev-muted);
+  font-size: 0.98rem;
+  margin: 0;
+}
+
+.instagram-card span {
+  margin-top: auto;
+  padding-top: 18px;
+  color: var(--ev-primary);
+  font-weight: 850;
+}
+
+.instagram-card.sleep {
+  --ig-a: rgba(47, 111, 159, 0.12);
+  --ig-b: rgba(217, 154, 43, 0.12);
+}
+
+.instagram-card.water {
+  --ig-a: rgba(47, 111, 159, 0.14);
+  --ig-b: rgba(47, 125, 92, 0.10);
+}
+
+.instagram-card.walk {
+  --ig-a: rgba(47, 125, 92, 0.13);
+  --ig-b: rgba(217, 154, 43, 0.11);
+}
+
+.instagram-card.sun {
+  --ig-a: rgba(217, 154, 43, 0.14);
+  --ig-b: rgba(47, 125, 92, 0.09);
+}
+
+.instagram-card.minerals {
+  --ig-a: rgba(47, 125, 92, 0.11);
+  --ig-b: rgba(123, 174, 127, 0.13);
+}
+
+.instagram-card.gut {
+  --ig-a: rgba(123, 174, 127, 0.13);
+  --ig-b: rgba(217, 154, 43, 0.10);
+}
+
 .product-card h3,
 .guide-card h3,
 .category-card h3,
@@ -383,5 +504,13 @@ p {
   .btn-buy,
   .btn-store {
     width: 100%;
+  }
+
+  .instagram-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .instagram-card {
+    min-height: 230px;
   }
 }
