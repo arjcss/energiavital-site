@@ -347,6 +347,67 @@
             border-color: rgba(217, 154, 43, 0.36);
         }
 
+        #comece .card {
+            --tone-a: var(--primary);
+            --tone-b: var(--secondary);
+            padding-top: 116px;
+            background:
+                linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.94));
+            border-color: rgba(47, 125, 92, 0.14);
+        }
+
+        #comece .card::before {
+            height: 86px;
+            background:
+                radial-gradient(circle at 86% 18%, rgba(255,255,255,0.34) 0 19px, transparent 20px),
+                radial-gradient(circle at 14% 74%, rgba(255,255,255,0.18) 0 24px, transparent 25px),
+                linear-gradient(135deg, var(--tone-a), var(--tone-b));
+        }
+
+        #comece .card::after {
+            content: "";
+            position: absolute;
+            top: 25px;
+            left: 24px;
+            width: 46px;
+            height: 46px;
+            border-radius: 16px;
+            background:
+                linear-gradient(135deg, rgba(255,255,255,0.28), rgba(255,255,255,0.08));
+            border: 1px solid rgba(255,255,255,0.32);
+            box-shadow: 18px 10px 0 rgba(255,255,255,0.12);
+        }
+
+        #comece .pain-sleep {
+            --tone-a: #2f6f9f;
+            --tone-b: #d99a2b;
+        }
+
+        #comece .pain-legs {
+            --tone-a: #2f7d5c;
+            --tone-b: #b7791f;
+        }
+
+        #comece .pain-night {
+            --tone-a: #1f2933;
+            --tone-b: #2f6f9f;
+        }
+
+        #comece .pain-gut {
+            --tone-a: #2f7d5c;
+            --tone-b: #7bae7f;
+        }
+
+        #comece .pain-office {
+            --tone-a: #64748b;
+            --tone-b: #2f7d5c;
+        }
+
+        #comece .pain-training {
+            --tone-a: #2f6f9f;
+            --tone-b: #2f7d5c;
+        }
+
         .decision-strip {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
@@ -600,37 +661,37 @@
                 <p>Aqui a compra aparece como consequência da análise, não como milagre. Escolha a hipótese que mais parece com sua rotina.</p>
             </div>
             <div class="pain-grid">
-                <a href="/acordo-cansado-mesmo-dormindo.html" class="card featured">
+                <a href="/acordo-cansado-mesmo-dormindo.html" class="card featured pain-sleep">
                     <small>Sono e energia</small>
                     <h3>Acordo cansado mesmo dormindo</h3>
                     <p>Revise sono, hidratação, ambiente, travesseiro, treino, alimentação e sinais de alerta.</p>
                     <span class="card-cta">Entender a rotina</span>
                 </a>
-                <a href="/pernas-cansadas-pes-doloridos.html" class="card featured">
+                <a href="/pernas-cansadas-pes-doloridos.html" class="card featured pain-legs">
                     <small>Caminhada e circulação</small>
                     <h3>Pernas cansadas e pés doloridos</h3>
                     <p>Calçado, meias, palmilhas, apoio para pés e massageadores com mais critério.</p>
                     <span class="card-cta">Ver caminhos</span>
                 </a>
-                <a href="/rotina-noturna-dormir-melhor.html" class="card">
+                <a href="/rotina-noturna-dormir-melhor.html" class="card pain-night">
                     <small>Noite e descanso</small>
                     <h3>Quero dormir melhor</h3>
                     <p>Luz, ruído, ambiente, máscara, protetor auricular, difusor e rotina noturna.</p>
                     <span class="card-cta">Montar uma noite melhor</span>
                 </a>
-                <a href="/intestino-preso-inchaco-rotina-alimentar.html" class="card">
+                <a href="/intestino-preso-inchaco-rotina-alimentar.html" class="card pain-gut">
                     <small>Intestino e alimentação</small>
                     <h3>Intestino preso e inchaço</h3>
                     <p>Água, fibras, psyllium, probióticos e rotina alimentar antes da compra.</p>
                     <span class="card-cta">Começar pelo básico</span>
                 </a>
-                <a href="/home-office-corpo-cansado.html" class="card">
+                <a href="/home-office-corpo-cansado.html" class="card pain-office">
                     <small>Rotina sentada</small>
                     <h3>Corpo cansado no home office</h3>
                     <p>Pés, postura, pausas, hidratação, massageadores e movimento ao longo do dia.</p>
                     <span class="card-cta">Organizar o dia</span>
                 </a>
-                <a href="/treino-em-casa-kit-basico.html" class="card">
+                <a href="/treino-em-casa-kit-basico.html" class="card pain-training">
                     <small>Treino prático</small>
                     <h3>Quero treinar em casa</h3>
                     <p>Halteres, kettlebell, tênis, garrafa e critérios para começar sem exagero.</p>
