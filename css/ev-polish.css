@@ -214,6 +214,56 @@ p {
     linear-gradient(180deg, rgba(255,253,248,0.98), rgba(255,250,242,0.92)) !important;
 }
 
+.product-card {
+  min-height: 100%;
+  display: flex !important;
+  flex-direction: column;
+  padding: 28px !important;
+  border-radius: 20px !important;
+  background:
+    radial-gradient(circle at 88% 12%, rgba(255, 255, 255, 0.78), transparent 4.8rem),
+    linear-gradient(135deg, rgba(47, 125, 92, 0.08) 0%, rgba(255, 253, 248, 0.98) 48%, rgba(217, 154, 43, 0.10) 100%) !important;
+}
+
+.product-card::before {
+  height: 0 !important;
+  background: transparent !important;
+}
+
+.product-card .tag,
+.product-card .badge,
+.product-card small {
+  width: fit-content;
+  padding: 6px 12px !important;
+  border-radius: 999px !important;
+  background: rgba(255, 255, 255, 0.72) !important;
+  color: var(--ev-primary-strong) !important;
+  font-size: 0.78rem !important;
+  font-weight: 850 !important;
+  margin-bottom: 12px !important;
+}
+
+.product-card h3,
+.product-card h4 {
+  margin-top: 0 !important;
+  color: var(--ev-primary-strong) !important;
+}
+
+.product-card p {
+  margin-bottom: 16px !important;
+}
+
+.product-card .store-buttons,
+.product-card .button-row,
+.product-card .button-stack {
+  margin-top: auto !important;
+  display: flex !important;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  padding-top: 14px;
+}
+
 .category-card,
 .product-card,
 .guide-card,
@@ -249,11 +299,32 @@ p {
 .btn-store,
 .hero-actions a,
 .store-buttons a {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
   border-radius: 11px !important;
   font-weight: 800 !important;
   letter-spacing: 0;
   box-shadow: 0 13px 26px rgba(31, 41, 51, 0.16) !important;
   min-height: 48px;
+  width: fit-content;
+  max-width: 100%;
+  padding: 12px 18px !important;
+  line-height: 1.2 !important;
+  white-space: normal;
+}
+
+.product-card .btn,
+.product-card .buy-button,
+.product-card .btn-buy,
+.product-card .btn-store,
+.product-card .button-row a,
+.product-card .button-stack a,
+.product-card .store-buttons a {
+  min-width: 190px;
+  max-width: 100%;
+  flex: 0 1 auto;
 }
 
 .btn:hover,
