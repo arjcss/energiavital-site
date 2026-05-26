@@ -454,6 +454,11 @@ p {
   --ig-b: rgba(123, 174, 127, 0.13);
 }
 
+.instagram-card.immune {
+  --ig-a: rgba(217, 154, 43, 0.13);
+  --ig-b: rgba(47, 125, 92, 0.12);
+}
+
 .instagram-card.gut {
   --ig-a: rgba(123, 174, 127, 0.13);
   --ig-b: rgba(217, 154, 43, 0.10);
